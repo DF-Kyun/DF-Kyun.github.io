@@ -5,24 +5,16 @@ title: "关于：About"
 Welcome to visit my blog!
 
 #### 1.Personal Info
-Name: Xuewen Pan(潘学文)  
+Name: DF-Kyun  
 Gender: Male  
-City: Wuhan, China  
-Career: Software developer(Android&Linux&Web)  
+City: Jinan, China  
+Career: Software developer(Linux&Web)  
 
 #### 2.My Links
-Blog: <http://www.panxw.com>  
-GitHub: <https://github.com/panxw>  
-LinkedIn: <http://www.linkedin.com/in/panxw>  
+Blog: <https://df-kyun.github.io/>  
+GitHub: <https://github.com/DF-Kyun>  
 
 
 #### 3.Contract
-Email: winfirm#163.com  
-QQ: 85902258  
+Email: dfkyun@gmail.com  
 
-### 4.Domain For Sale
-danbaili.com  
-fangxinyu.com  
-maicaiwa.com  
-babytoycar.com  
-youth168.com  
