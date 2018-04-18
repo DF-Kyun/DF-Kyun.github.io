@@ -4,7 +4,13 @@ permalink: /posts/:title.html
 excerpt_separator: "<!-- more -->"
 
 github: DF-Kyun
+author: "kyun"
 email: dfkyun@gmail.com
+name: "kyun's Blog"
+baseurl: /
+url: https://df-kyun.github.io
+domain: https://df-kyun.github.io
+
 all_categories: [
 ["program", "软件编程","/posts/program.html"],
 ["web", "Web建站","/posts/web.html"], 
