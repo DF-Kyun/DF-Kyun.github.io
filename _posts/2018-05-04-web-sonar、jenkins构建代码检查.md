@@ -21,12 +21,12 @@ tags: [web, 代码检查, sonar, jenkins]
 
 ##### 创建数据库  
 创建用户sonar：  
+
 	CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;  
 	CREATE USER 'sonar' IDENTIFIED BY 'sonar';  
 	GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';  
 	GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';  
 	FLUSH PRIVILEGES;
-	
 
 ##### 修改配置文件
 	将sonar-5.6.zip上传到服务器，放置到/home目录下，新建sonar目录，并解压到当前目录即可。
