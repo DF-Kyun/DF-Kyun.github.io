@@ -4,11 +4,12 @@ category: "web"
 title:  "sonar、jenkins构建代码检查"
 tags: [web, 代码检查, sonar, jenkins]
 ---
+
 ###sonar、jenkins构建代码检查
 
 最近因为工作原因构建了一下代码检查流程，这里记录一下
 
-####安装sonar
+####安装sonar  
 #####预置条件
 	1）已安装JAVA环境
 		版本：JDK1.8
