@@ -20,7 +20,7 @@ tags: [web, 代码检查, sonar, jenkins]
 		版本：sonar-scanner2.8
 
 ##### 创建数据库  
-创建用户sonar：
+创建用户sonar：  
 	<pre>
 	CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
 	CREATE USER 'sonar' IDENTIFIED BY 'sonar';
@@ -32,15 +32,15 @@ tags: [web, 代码检查, sonar, jenkins]
 ##### 修改配置文件
 	将sonar-5.6.zip上传到服务器，放置到/home目录下，新建sonar目录，并解压到当前目录即可。
 	修改conf目录下的sonar.properties文件
-	配置参考：
+	配置参考：  
 
 ![数据库连接]({{"/assets/web/1.png" | absolute_url}})
 
-	修改数据库连接及用户名、密码
+	修改数据库连接及用户名、密码  
 ![访问地址IP]({{"/assets/web/2.png" | absolute_url}})
 
 	同时需要设置设置 sonar.scm.disabled=true
-	web界面配置需修改如下，如果不设置，通过svn访问会报无权限
+	web界面配置需修改如下，如果不设置，通过svn访问会报无权限  
 ![scm修改]({{"/assets/web/3.png" | absolute_url}})
 
 ##### 启动服务
