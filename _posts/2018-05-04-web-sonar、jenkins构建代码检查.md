@@ -41,7 +41,7 @@ tags: [web, 代码检查, sonar, jenkins]
 	同时需要设置 sonar.scm.disabled=true
 	web界面配置需修改如下，如果不设置，通过svn访问会报无权限  
 
-![scm修改]({{"/assets/web/1.png" | absolute_url}} =100*100)
+![scm修改]({{"/assets/web/1.png" | absolute_url}})
 
 ##### 启动服务
 	启动sonar
