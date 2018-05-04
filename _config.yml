@@ -1,4 +1,4 @@
-markdown: kramdown
+markdown: rdiscount
 highlighter: rouge
 permalink: /posts/:title.html
 excerpt_separator: "<!-- more -->"
