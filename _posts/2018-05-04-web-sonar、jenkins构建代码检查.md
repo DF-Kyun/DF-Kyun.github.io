@@ -84,7 +84,7 @@ tags: [web, 代码检查, sonar, jenkins]
 	sonar.sources=.
 
 	执行sonar-scanner。进入到存放sonar-project.properties文件的目录，执行sonar-scanner，执行结果显示EXECUTION SUCCESS，则解析成功。
-	此时登陆http://IP:9000，会看到解析project的信息在网页上显示
+	此时登陆http://IP:9000，会看到解析project的信息在网页上显示  
 
 ![扫描结果]({{/assets/web/2.png" | absolute_url}})
 
@@ -98,23 +98,23 @@ tags: [web, 代码检查, sonar, jenkins]
 	需要的插件为svn插件及sonar插件，SonarQube Scanner for Jenkins，Subversion Plug-in
 
 	重启Jenkins后，管理员权限登录进入：系统管理--> 系统设置 
-	配置如下：
+	配置如下：  
 
 ![sonar配置]({{/assets/web/3.png" | absolute_url}})
 
 	Server URL切记加上http://，不能只输入IP地址加端口，否则会提示不能连接，Server authentication token项需要在sonar server端生成，访问sonar server端，菜单--》配置--》权限--》用户--》TOKENS--》Generate ，输入TokenName=”admin”，生成token，将生成的复制到Server authentication token
 
 	管理员权限登录进入：系统管理--> 全局工具配置
-	设置JDK：
+	设置JDK：  
 
 ![JDK设置]({{/assets/web/4.png" | absolute_url}})
 
-	设置SonarQube Scanner：
+	设置SonarQube Scanner：  
 
 ![SonarQube设置]({{/assets/web/5.png" | absolute_url}})
 
 ##### 新建任务
-	填写项目名称：
+	填写项目名称：  
 
 ![项目名]({{/assets/web/6.png" | absolute_url}})
 
