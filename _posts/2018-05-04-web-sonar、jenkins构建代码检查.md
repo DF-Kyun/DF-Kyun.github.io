@@ -19,7 +19,7 @@ tags: [web, 代码检查, sonar, jenkins]
 		版本：sonarQube5.6
 		版本：sonar-scanner2.8
 
-#####创建数据库
+##### 创建数据库  
 创建用户sonar：
 	<pre>
 	CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
@@ -29,7 +29,7 @@ tags: [web, 代码检查, sonar, jenkins]
 	FLUSH PRIVILEGES;
 	</pre>
 
-#####修改配置文件
+##### 修改配置文件
 	将sonar-5.6.zip上传到服务器，放置到/home目录下，新建sonar目录，并解压到当前目录即可。
 	修改conf目录下的sonar.properties文件
 	配置参考：
@@ -43,26 +43,26 @@ tags: [web, 代码检查, sonar, jenkins]
 	web界面配置需修改如下，如果不设置，通过svn访问会报无权限
 ![scm修改]({{"/assets/web/3.png" | absolute_url}})
 
-#####启动服务
+##### 启动服务
 	启动sonar
 	切换到sonar安装目录下 /bin/linux-x86-64
 	#./sonar.sh start
 
 	访问http:\\IP:9000页面出现sonarQube页面即可（启动成功）
 
-####sonar插件安装
-#####中文插件安装
+#### sonar插件安装
+##### 中文插件安装
 	1.进入插件下载页面
 		http://docs.codehaus.org/display/SONAR/Plugin+Library
 	2.找到Localization---chinese   点击，选择相应版本对应的插件下载
 	3.下载后，放入sonar目录如下sonarqube-5.6\extensions\plugins，重启sonar，访问页面如下：
 ![访问页面]({{/assets/web/4.png" | absolute_url}})
 
-#####其余插件集成
+##### 其余插件集成
 	下载SonarWeb、SonarXML插件，放入sonar目录如下sonarqube-5.6\extensions\plugins，重启sonar
 
-####sonar-scanner部署
-#####安装、配置
+#### sonar-scanner部署
+##### 安装、配置
 	目录下解压文件，修改配置文件sonar-scanner.properties，配置文件内容包括数据库连接及访问地址
 ![配置文件]({{/assets/web/5.png" | absolute_url}})
 
@@ -70,7 +70,7 @@ tags: [web, 代码检查, sonar, jenkins]
 	在/etc/profile下配置环境变量
 ![环境变量]({{/assets/web/6.png" | absolute_url}})
 
-#####代码扫描
+##### 代码扫描
 	创建sonar-project.properties。
 	对代码进行分析，必须要创建sonar-project.properties文件，执行sonar-scanner时，会对根据
 	sonar-project.properties文件进行搜索，该文件要放在与项目同一目录下。
@@ -80,8 +80,8 @@ tags: [web, 代码检查, sonar, jenkins]
 	此时登陆http://IP:9000，会看到解析project的信息在网页上显示
 ![扫描结果]({{/assets/web/8.png" | absolute_url}})
 
-####Jenkins部署及集成sonar
-#####Jenkins部署
+#### Jenkins部署及集成sonar
+##### Jenkins部署
 	下载jenkins.war，Tomcat下部署，启动Tomcat，访问http://ip:port/jenkins，管理员权限登录Jenkins，
 	安装插件，两种方式:
 	1、启动时选择安装插件，需要连接网络，内网环境受限
@@ -102,7 +102,7 @@ tags: [web, 代码检查, sonar, jenkins]
 	设置SonarQube Scanner：
 ![SonarQube设置]({{/assets/web/12.png" | absolute_url}})
 
-#####新建任务
+##### 新建任务
 	填写项目名称：
 ![项目名]({{/assets/web/13.png" | absolute_url}})
 
