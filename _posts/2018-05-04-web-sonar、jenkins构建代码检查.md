@@ -21,13 +21,12 @@ tags: [web, 代码检查, sonar, jenkins]
 
 ##### 创建数据库  
 创建用户sonar：  
-	<pre>
-	CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
-	CREATE USER 'sonar' IDENTIFIED BY 'sonar';
-	GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';
-	GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';
+	CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;  
+	CREATE USER 'sonar' IDENTIFIED BY 'sonar';  
+	GRANT ALL ON sonar.* TO 'sonar'@'%' IDENTIFIED BY 'sonar';  
+	GRANT ALL ON sonar.* TO 'sonar'@'localhost' IDENTIFIED BY 'sonar';  
 	FLUSH PRIVILEGES;
-	</pre>
+	
 
 ##### 修改配置文件
 	将sonar-5.6.zip上传到服务器，放置到/home目录下，新建sonar目录，并解压到当前目录即可。
@@ -132,7 +131,7 @@ tags: [web, 代码检查, sonar, jenkins]
 ![构建]({{/assets/web/16.png" | absolute_url}})
 
 	之后返回会发现出现sonarqube选项，点击立即构建，构建完成之后，可以在sonarqube界面端查看检查结果
-	
+
 ![执行构建]({{/assets/web/17.png" | absolute_url}})
 
 
