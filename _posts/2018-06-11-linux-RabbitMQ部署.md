@@ -17,14 +17,15 @@ tags: [linux, RabbitMQ]
 
 #### erlang语言环境安装
 官方下载安装包，官方地址：http://www.erlang.org/downloads，此次安装使用的版本是otp_src_20.3.tar.gz，下载之后上传到服务器
-在上传目录解压 
-	tar -xvf　otp_src_20.3.tar.gz 
-安装依赖包 
-	yum install -y gcc gcc-c++ unixODBC-devel openssl-devel ncurses-devel perl
-检查环境、设置安装位置 
-	./configure --prefix=/usr/local/erlang --without-javac
-安装 
-	make && make install
+
+在上传目录解压   
+	tar -xvf　otp_src_20.3.tar.gz   
+安装依赖包   
+	yum install -y gcc gcc-c++ unixODBC-devel openssl-devel ncurses-devel perl  
+检查环境、设置安装位置   
+	./configure --prefix=/usr/local/erlang --without-javac  
+安装   
+	make && make install  
 
 配置环境变量 
 	vi /etc/profile
