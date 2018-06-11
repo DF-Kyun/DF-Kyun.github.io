@@ -27,22 +27,22 @@ tags: [linux, RabbitMQ]
 安装   
 	make && make install  
 
-配置环境变量 
-	vi /etc/profile
-	添加
-	export PATH=$PATH:/usr/local/erlang/bin
-	保存，执行 source /etc/profile
+配置环境变量   
+	vi /etc/profile  
+	添加  
+	export PATH=$PATH:/usr/local/erlang/bin  
+	保存，执行 source /etc/profile  
 
-测试erlang环境
-	在命令行中输入erl，出现erlang环境，则安装成功
+测试erlang环境  
+	在命令行中输入erl，出现erlang环境，则安装成功  
 
-问题解决：
-checking for perl... no_perl
-configure: error: Perl is required to generate v2 to v1 mib converter script
-configure: error: /bin/sh '/root/software/otp_src_17.1/lib/snmp/./configure' failed for snmp/.
-configure: error: /bin/sh '/root/software/otp_src_17.1/lib/configure' failed for lib
+问题解决：   
+checking for perl... no_perl   
+configure: error: Perl is required to generate v2 to v1 mib converter script   
+configure: error: /bin/sh '/root/software/otp_src_17.1/lib/snmp/./configure' failed for snmp/.   
+configure: error: /bin/sh '/root/software/otp_src_17.1/lib/configure' failed for lib   
  
-\#如上，提示错误，解决方法：安装Perl
+\#如上，提示错误，解决方法：安装Perl   
 [root@localhost otp_src_17.1]# yum install perl
 
 
@@ -50,13 +50,13 @@ configure: error: /bin/sh '/root/software/otp_src_17.1/lib/configure' failed for
 #### RabbitMQ安装
 官方下载安装包，官方地址：https://www.rabbitmq.com/install-rpm.html，本次使用的版本为rabbitmq-server-3.7.5-1.el7.noarch.rpm，下载之后上传服务器
 
-rpm包安装
-rpm -ivh ./rabbitmq-server-3.7.5-1.el7.noarch.rpm
+rpm包安装  
+rpm -ivh ./rabbitmq-server-3.7.5-1.el7.noarch.rpm  
 
-安装会报错 有依赖关系
-socat is needed by rabbitmq-server-3.7.5-1.el7.noarch
+安装会报错 有依赖关系  
+socat is needed by rabbitmq-server-3.7.5-1.el7.noarch   
 
-解决方法：
+解决方法：   
 
 yum -y install socat
 
