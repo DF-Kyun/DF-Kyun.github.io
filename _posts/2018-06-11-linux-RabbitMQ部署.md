@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "linux"
-title:  "虚拟机Vcenter添加硬盘无法识别"
+title:  "RabbitMQ部署"
 tags: [linux, RabbitMQ]
 ---
 
