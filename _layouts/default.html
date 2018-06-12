@@ -11,7 +11,6 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- Custom CSS -->
     <link href="/css/blog.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="/comment/default.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media
     queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://
@@ -26,7 +25,6 @@
     <script src="/js/jquery-1.11.0.js"> </script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/tongji.js"></script>
   </head>
   
   <body>
@@ -67,29 +65,15 @@
         </div>
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
-          <!-- Side Widget Well -->
-          <div class="well">
-            <h4>
-              推荐链接
-            </h4>
-			      <div class="row">
-            {% include recommend_link.html %} 
-            </div>
-          </div>
-
-          <!-- Side Widget Well -->
-          <div class="well-ad">
-            {% include adsense_336x280.html %} 
-          </div>
-
-		      <!-- Blog Recent Well -->
+          <!-- Blog Categories Well -->
           <div class="well">
             <h4>
               最新文章
             </h4>
             <div class="row">
-                    {% include recent_posts.html %} 
+              {% include recent_posts.html %} 
             </div>
+            <!-- /.row -->
           </div>
         </div>
       </div>
@@ -107,7 +91,6 @@
       </footer>
     </div>
     <!-- /.container -->
-    {% include spider.html %} 
   </body>
 
 </html>
