@@ -25,7 +25,6 @@ paginate_path: "posts/page:num"
 timezone: Asia/Shanghai
 
 index_layout: "index.html"
-category_layout: "_layouts/category.html"
 
 gems: [jekyll-paginate]
  
