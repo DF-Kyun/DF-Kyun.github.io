@@ -20,8 +20,8 @@ tags: [linux, RabbitMQ]
 #### 配置hosts文件
 
 编辑/etc/hosts文件，添加如下信息：  
- 	10.110.8.34   node1
- 	10.110.8.38   node2
+ 	10.110.8.34   node1    
+ 	10.110.8.38   node2    
 如果需要更改节点名称，可以编辑/etc/rabbitmq/rabbitmq-env.conf 文件，添加     
 
 	NODENAME=rabbit@node1
