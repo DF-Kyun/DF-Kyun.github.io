@@ -101,6 +101,7 @@ tags: [linux, RabbitMQ]
 
 
 启动haproxy  
+
 	service haproxy start
 
 启动成功后，界面如图：  
