@@ -12,13 +12,15 @@ tags: [linux, RabbitMQ]
 #### 安装HAProxy
 
 下载HAProxy相关版本，这里下载haproxy-1.8.12.tar.gz，之后准备安装  
-安装之前查看内核版本  
+安装之前查看内核版本
+
 	uname -r
 
 根据内核版本选择编译参数：  
 ![编译参数]({{"/assets/linux/201807/0501.png" | absolute_url}})
 
-解压HAProxy，并安装  
+解压HAProxy，并安装        
+
 	tar xf haproxy-1.8.12.tar.gz
 	cd haproxy-1.7.5
 	make TARGET=linux2628 PREFIX=/usr/local/haproxy
@@ -26,24 +28,29 @@ tags: [linux, RabbitMQ]
 
 
 安装成功之后，查看版本  
+
 	/usr/local/haproxy/sbin/haproxy -v
 
 
 #### 配置HAProxy
 
 配置启动文件，复制haproxy文件到/usr/sbin下 ，复制haproxy脚本，到/etc/init.d下  
+
 	cp /usr/local/haproxy/sbin/haproxy /usr/sbin/
 	cp ./examples/haproxy.init /etc/init.d/haproxy
 	chmod 755 /etc/init.d/haproxy
 
 创建系统账号  
+
 	useradd -r haproxy
 
 创建配置文件  
+
 	mkdir /etc/haproxy
 	vi /etc/haproxy/haproxy.cfg
 
 更改配置文件   
+
 	#全局配置
 	global
 		#设置日志
@@ -91,6 +98,7 @@ tags: [linux, RabbitMQ]
 	        stats enable
 	        stats uri /stats
 	        stats refresh 5s
+
 
 启动haproxy  
 	service haproxy start
