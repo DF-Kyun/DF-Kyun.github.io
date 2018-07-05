@@ -53,8 +53,9 @@ tags: [linux, RabbitMQ]
 
 	#全局配置
 	global
-		#设置日志
+	    #设置日志
 	    log 127.0.0.1 local0 info
+	    #当前工作目录
 	    chroot /usr/local/haproxy
 	    #用户与用户组
 	    user haproxy
