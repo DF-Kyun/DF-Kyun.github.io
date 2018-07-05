@@ -69,14 +69,24 @@ tags: [linux, RabbitMQ]
 	
 	#默认配置
 	defaults
+	    #应用全局的日志配置
 	    log global
+	    #默认的模式mode {tcp|http|health}
+	    #TCP是4层，HTTP是7层，health只返回OK
 	    mode tcp
+	    #日志类别tcplog
 	    option tcplog
+	    #不记录健康检查日志信息
 	    option dontlognull
+	    #3次失败则认为服务不可用
 	    retries 3
+	    #每个进程可用的最大连接数
 	    maxconn 2000
+	    #连接超时
 	    timeout connect 5s
+	    #客户端超时
 	    timeout client 120s
+	    #服务端超时
 	    timeout server 120s
 	
 	#绑定配置
