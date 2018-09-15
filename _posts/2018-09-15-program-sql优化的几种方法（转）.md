@@ -1,8 +1,8 @@
 ---
 layout: post
-category: "linux"
-title:  "Nginx集成Naxsi构建WAF"
-tags: [linux, nginx,naxsi]
+category: "program"
+title:  "sq优化的几种方法（转）"
+tags: [program ,sql]
 ---
 
 ### sq优化的几种方法（转）
