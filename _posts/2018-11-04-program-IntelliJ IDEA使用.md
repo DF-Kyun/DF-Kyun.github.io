@@ -60,7 +60,8 @@ Navigate--->Class    File
 
 符号  
 
-Ctrl+Alt+Shift+N，可以搜索关键字，包括变量名、函数名和类名等。
+Ctrl+Alt+Shift+N，可以搜索关键字，包括变量名、函数名和类名等。  
+
 字符串  
 
 要搜索字符串，可以通过Ctrl+Shift+F来实现，有几个选项：  
