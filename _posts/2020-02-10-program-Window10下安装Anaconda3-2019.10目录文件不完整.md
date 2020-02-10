@@ -1,3 +1,12 @@
+---
+layout: post
+category: "program"
+title:  "Window10下安装anaconda3 2019.10目录文件不完整"
+tags: [program ,Anaconda]
+---
+
+
+
 最近学习Anaconda，安装了最新版本的Anaconda3-2019.10，结果安装目录下只有这么些东西：  
 ![安装目录]({{"/assets/program/20200210/1.png" | absolute_url}})
 并且安装完成后开始菜单没有如下的相关应用选项：  
