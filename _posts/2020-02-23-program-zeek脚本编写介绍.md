@@ -15,7 +15,7 @@ Zeek是一个被动的开源网络流量分析器。它主要是一种安全监�
 ## 脚本编写
 基本命令
 
-![]({{"/assets/linux/20200223/1.png" | absolute_url}})
+![]({{"/assets/program/20200223/1.png" | absolute_url}})
 
 ### 编写并通过bare模式执行脚本
 Zeek的脚本语言是事件驱动的，Zeek中的脚本编写取决于Zeek在处理网络流量时生成的事件，通过这些事件更改数据结构的状态以及对所提供信息进行决策。
@@ -24,7 +24,7 @@ Zeek的核心作用是将事件放入有序的“事件队列”中，从而使�
 
 一个简单的例子
 
-![]({{"/assets/linux/20200223/2.png" | absolute_url}})
+![]({{"/assets/program/20200223/2.png" | absolute_url}})
 
 ### 连接记录数据类型
 **connection 类型**
@@ -39,30 +39,30 @@ Zeek的核心作用是将事件放入有序的“事件队列”中，从而使�
 
 ### 通过网络抓包的方式获取数据，然后执行脚本
 通过抓包来获取数据，模拟解析网络数据，查看连接内容
-![]({{"/assets/linux/20200223/3.png" | absolute_url}})
+![]({{"/assets/program/20200223/3.png" | absolute_url}})
 
-![]({{"/assets/linux/20200223/4.png" | absolute_url}})
+![]({{"/assets/program/20200223/4.png" | absolute_url}})
 
-![]({{"/assets/linux/20200223/5.png" | absolute_url}})
+![]({{"/assets/program/20200223/5.png" | absolute_url}})
 
 ### 记录源IP和访问IP，并计算两次访问间隔时间
-![]({{"/assets/linux/20200223/6.png" | absolute_url}})
+![]({{"/assets/program/20200223/6.png" | absolute_url}})
 
 ### 自定义日志记录框架（Logging Framework）
-![]({{"/assets/linux/20200223/7.png" | absolute_url}})
+![]({{"/assets/program/20200223/7.png" | absolute_url}})
 
 首先，需要通知Zeek我们将通过向Log::ID枚举数添加值来添加另一个Log Stream 。在此脚本中，我们将值LOG追加到Log::ID枚举值，但是由于此值位于导出块中，Log::ID因此实际 将值追加到Factor::Log。
 接下来，我们需要定义组成日志数据的名称和值对，并规定其格式。该脚本定义了一个新的记录数据类型，称为Info（实际上， Factor::Info）和四个字段，为addr和port。记录类型中的每个字段都包含&log 属性，在Log::write调用这些字段时应将这些字段传递给Logging Framework 。如果有任何不带&log属性的名称/值对，则将在记录期间仅忽略这些字段，但在变量的生命周期内仍然可用。
 下一步是创建Log::create_stream，一个以 Log::ID和一条记录及日志文件作为其参数的日志记录流。在此示例中，我们调用 Log::create_stream方法并通过Factor::LOG、 Factor::Info记录和factor日志文件名作为参数。
 从现在开始，向Log::write命令发出Log::ID且格式正确的Factor::Info记录，将生成日志条目。结果如下：
-![]({{"/assets/linux/20200223/8.png" | absolute_url}})
+![]({{"/assets/program/20200223/8.png" | absolute_url}})
 
 ### 通知框架
 要在Zeek中发出通知，只需要提供特定的Notice :: Type，然后调用NOTICE为其提供适当的Notice :: Info记录。通常，对NOTICE的调用仅包含Notice :: Type和简洁的消息。但是，在发出通知时，有更多选项，note :: Info中唯一必填的字段是note字段。
-![]({{"/assets/linux/20200223/9.png" | absolute_url}})
+![]({{"/assets/program/20200223/9.png" | absolute_url}})
 
 会在notice.log文件中记录通知信息
-![]({{"/assets/linux/20200223/10.png" | absolute_url}})
+![]({{"/assets/program/20200223/10.png" | absolute_url}})
 
 首先，脚本export块将LogNotice::Interesting_Hostname_Login值添加到枚举常量中， Notice::Type记录定义新的通知类型。然后，脚本将调用NOTICE和定义 $note，$msg，$sub，$id，和$uid记录。
 其次，通知加入系统通过Notice::policy挂钩进行管理 。一个Notice::policy钩其参数Notice::Info用来存放脚本在其调用时提供的信息记录。通过访问Notice::Info中特定的记录，进行逻辑判断，以更改用于处理系统中的通知的策略。
