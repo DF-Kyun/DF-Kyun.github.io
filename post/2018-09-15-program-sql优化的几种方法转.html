@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+<head><title> sq优化的几种方法（转） - DF-Kyun</title><meta name="baidu-site-verification" content="jZRrwlvEpq" />
+<meta name="google-site-verification" content="OcQLxKrUrj5A9hpAdCQuoY-K7f5Ja4LUYt35Kxdwq_E" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="DF-Kyun的博客" />
+<meta name="keywords" content="DF-Kyun的博客" />
+<meta name="generator" content="Tale" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="/img/favicon.ico">
+<link href="https://cdn.staticfile.org/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/customui.css">
+
+<link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+<style>
+.hljs{display:block;overflow-x:auto;padding:0.5em;color:#383a42;background:#fafafa}.hljs-comment,.hljs-quote{color:#a0a1a7;}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#a626a4}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#e45649}.hljs-literal{color:#0184bb}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#50a14f}.hljs-built_in,.hljs-class .hljs-title{color:#c18401}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#986801}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#4078f2}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}
+</style>
+
+</head>
+
+<body id="blog">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">DF-Kyun的博客</a>
+            
+        </div>
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/">首页</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/post.html">归档</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/categories.html">分类</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/tags.html">标签</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/about.html">关于</a>
+                    
+
+                    
+
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+<header class="intro-header" style="background-image: url('/images/snowgitlabk.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    
+                    <h1>sq优化的几种方法（转）</h1>
+
+                    
+                    <span class="meta">@DF-Kyun &nbsp;2018-09-15</span>
+                    <div class="tags post-tags">
+                        <div class="post-tags">
+                            <a href="https://df-kyun.github.io/tags/program.html">program</a>
+                            <a href="https://df-kyun.github.io/tags/sql.html">sql</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    
+
+<div class="container">
+    <div class="am-g am-g-fixed blog-fixed">
+        <div class="am-u-lg-12 am-u-sm-12">
+            <article class="am-article blog-article-p article-trigger">
+                <div id="post-content" class="am-article-bd">
+                    <h3 id="sq优化的几种方法转">sq优化的几种方法（转）</h3>
+<p><strong>在sql查询中为了提高查询效率，我们常常会采取一些措施对查询语句进行sql优化，下面总结的一些方法，有需要的可以参考参考。</strong></p>
+<p>1.对查询进行优化，应尽量避免全表扫描，首先应考虑在 where 及 order by 涉及的列上建立索引。</p>
+<p>2.应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引而进行全表扫描，如：<br>
+select id from t where num is null<br>
+可以在num上设置默认值0，确保表中num列没有null值，然后这样查询：<br>
+select id from t where num=0</p>
+<p>3.应尽量避免在 where 子句中使用!=或&lt;&gt;操作符，否则将引擎放弃使用索引而进行全表扫描。</p>
+<p>4.应尽量避免在 where 子句中使用 or 来连接条件，否则将导致引擎放弃使用索引而进行全表扫描，如：<br>
+select id from t where num=10 or num=20<br>
+可以这样查询：<br>
+select id from t where num=10<br>
+union all<br>
+select id from t where num=20</p>
+<p>5.in 和 not in 也要慎用，否则会导致全表扫描，如：<br>
+select id from t where num in(1,2,3)<br>
+对于连续的数值，能用 between 就不要用 in 了：<br>
+select id from t where num between 1 and 3</p>
+<p>6.下面的查询也将导致全表扫描：<br>
+select id from t where name like &lsquo;%abc%&rsquo;</p>
+<p>7.应尽量避免在 where 子句中对字段进行表达式操作，这将导致引擎放弃使用索引而进行全表扫描。如：<br>
+select id from t where num/2=100<br>
+应改为:<br>
+select id from t where num=100*2</p>
+<p>8.应尽量避免在where子句中对字段进行函数操作，这将导致引擎放弃使用索引而进行全表扫描。如：<br>
+select id from t where substring(name,1,3)='abc&rsquo;&ndash;name以abc开头的id应改为:<br>
+select id from t where name like &lsquo;abc%&rsquo;</p>
+<p>9.不要在 where 子句中的“=”左边进行函数、算术运算或其他表达式运算，否则系统将可能无法正确使用索引。</p>
+<p>10.在使用索引字段作为条件时，如果该索引是复合索引，那么必须使用到该索引中的第一个字段作为条件时才能保证系统使用该索引，否则该索引将不会被使用，并且应尽可能的让字段顺序与索引顺序相一致。</p>
+<p>11.不要写一些没有意义的查询，如需要生成一个空表结构：<br>
+select col1,col2 into #t from t where 1=0<br>
+这类代码不会返回任何结果集，但是会消耗系统资源的，应改成这样：<br>
+create table #t(&hellip;)</p>
+<p>12.很多时候用 exists 代替 in 是一个好的选择：<br>
+select num from a where num in(select num from b)<br>
+用下面的语句替换：<br>
+select num from a where exists(select 1 from b where num=a.num)</p>
+<p>13.并不是所有索引对查询都有效，SQL是根据表中数据来进行查询优化的，当索引列有大量数据重复时，SQL查询可能不会去利用索引， 如一表中有字段sex，male、female几乎各一半，那么即使在sex上建了索引也对查询效率起不了作用。</p>
+<p>14.索引并不是越多越好，索引固然可以提高相应的 select 的效率，但同时也降低了 insert 及 update 的效率，因为 insert 或 update 时有可能会重建索引，所以怎样建索引需要慎重考虑，视具体情况而定。一个表的索引数最好不要超过6个，若太多则应考虑一些不常使用到的列上建的索引是否有必要。</p>
+<p>15.尽量使用数字型字段，若只含数值信息的字段尽量不要设计为字符型，这会降低查询和连接的性能，并会增加存储开销。<br>
+这是因为引擎在处理查询和连接时会逐个比较字符串中每一个字符，而对于数字型而言只需要比较一次就够了。</p>
+<p>16.尽可能的使用 varchar 代替 char ，因为首先变长字段存储空间小，可以节省存储空间，
+其次对于查询来说，在一个相对较小的字段内搜索效率显然要高些。</p>
+<p>17.任何地方都不要使用 select * from t ，用具体的字段列表代替“*”，不要返回用不到的任何字段。</p>
+<p>18.避免频繁创建和删除临时表，以减少系统表资源的消耗。</p>
+<p>19.临时表并不是不可使用，适当地使用它们可以使某些例程更有效，例如，当需要重复引用大型表或常用表中的某个数据集时。但是，对于一次性事件，最好使用导出表。</p>
+<p>20.在新建临时表时，如果一次性插入数据量很大，那么可以使用 select into 代替 create table，避免造成大量 log ，以提高速度；如果数据量不大，为了缓和系统表的资源，应先create table，然后insert。</p>
+<p>21.如果使用到了临时表，在存储过程的最后务必将所有的临时表显式删除，先 truncate table ，然后 drop table ，这样可以避免系统表的较长时间锁定。</p>
+<p>22.尽量避免使用游标，因为游标的效率较差，如果游标操作的数据超过1万行，那么就应该考虑改写。</p>
+<p>23.使用基于游标的方法或临时表方法之前，应先寻找基于集的解决方案来解决问题，基于集的方法通常更有效。</p>
+<p>24.与临时表一样，游标并不是不可使用。对小型数据集使用 FAST_FORWARD 游标通常要优于其他逐行处理方法，尤其是在必须引用几个表才能获得所需的数据时。<br>
+在结果集中包括“合计”的例程通常要比使用游标执行的速度快。如果开发时间允许，基于游标的方法和基于集的方法都可以尝试一下，看哪一种方法的效果更好。</p>
+<p>25.尽量避免大事务操作，提高系统并发能力。26.尽量避免向客户端返回大数据量，若数据量过大，应该考虑相应需求是否合理。</p>
+
+                </div>
+            </article>
+             <div id="directory-content" class="directory-content">
+             <div id="directory"></div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+	
+	
+<footer class="blog-footer">
+    <div class="blog-text-center">© 2019 <a href="/">DF-Kyun</a> 由 
+        <a href="https://github.com/gohugoio/hugo" target="_blank">Hugo</a>
+         强力驱动 Theme is 
+        <a href="https://github.com/Heemooo/amaze" target="_blank">Amaze made by heemooo</a>
+    </div>
+</footer>
+<script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    var $body=document.body;var $toggle=document.querySelector(".navbar-toggle");var $navbar=document.querySelector("#huxblog_navbar");var $collapse=document.querySelector(".navbar-collapse");var __HuxNav__={close:function(){$navbar.className=" ";setTimeout(function(){if($navbar.className.indexOf("in")<0){$collapse.style.height="0px"}},400)},open:function(){$collapse.style.height="auto";$navbar.className+=" in"}};$toggle.addEventListener("click",function(a){if($navbar.className.indexOf("in")>0){__HuxNav__.close()}else{__HuxNav__.open()}});document.addEventListener("click",function(a){if(a.target==$toggle){return}if(a.target.className=="icon-bar"){return}__HuxNav__.close()});jQuery(document).ready(function(c){var d=1170;if(c(window).width()>d){var b=c(".navbar-custom").height(),a=c(".intro-header .container").height();c(window).on("scroll",{previousTop:0},function(){var e=c(window).scrollTop(),f=c(".side-catalog");if(e<this.previousTop){if(e>0&&c(".navbar-custom").hasClass("is-fixed")){c(".navbar-custom").addClass("is-visible")}else{c(".navbar-custom").removeClass("is-visible is-fixed")}}else{c(".navbar-custom").removeClass("is-visible");if(e>b&&!c(".navbar-custom").hasClass("is-fixed")){c(".navbar-custom").addClass("is-fixed")}}this.previousTop=e;f.show();if(e>(a+41)){f.addClass("fixed")}else{f.removeClass("fixed")}})}});
+</script>
+<script>
+    $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block)
+        })
+        $('table').addClass('am-table')
+    });
+</script>
+<script src="/js/headBand.min.js"></script>
+<script>
+    $('.headBand').headBand({
+        'background':'#008aff',
+        'height':"3"
+    });
+</script>
+<script src="https://cdn.bootcss.com/headroom/0.9.4/headroom.min.js"></script>
+<script>
+       var postDirectoryBuild=function(){var b=function a(l,h){var k=[],e=typeof h==="object",g=typeof h==="string",j,f,d;for(f=0,d=l.length;f<d;f++){j=l[f];if((j.nodeType===1||j.nodeType===9)&&(!h||e&&h.test(j.tagName.toLowerCase())||g&&j.tagName.toLowerCase()===h)){k.push(j)}}return k},c=function(e,f,r){var n=[],m=[],h,p,d,j,l,s,o,g,k,q;h=(function(i,C,A){var w=b(i.childNodes,/^h\d$/),x=[],v=1,B=1,z=0,D=1,t="directory"+(Math.random()+"").replace(/\D/,""),B,y,u;while(w.length){u=w.shift();C.push(u.innerHTML);y=+u.tagName.match(/\d/)[0];if(y>v){x.push(1);B+=1}else{if(y===B||y>B&&y<=v){x.push(0);B=B}else{if(y<B){x.push(y-B);B=y}}}z+=x[x.length-1];v=y;u.id=u.id||(t+D++);A.push(u.id)}if(z!==0&&x[0]===1){x[0]=0}return x})(e,n,m);j=p=document.createElement("ul");q=document.createElement("span");q.style="color:#F38181;font-weight:600;";q.innerHTML="目录";p.appendChild(q);dirNum=[];for(g=0,k=h.length;g<k;g++){d=h[g];if(d===1){l=document.createElement("ul");if(!j.lastElementChild){j.appendChild(document.createElement("li"))}j.lastElementChild.appendChild(l);j=l;dirNum.push(0)}else{if(d<0){d*=2;while(d++){if(d%2){dirNum.pop()}j=j.parentNode}}}dirNum[dirNum.length-1]++;s=document.createElement("li");o=document.createElement("a");o.href="#"+m[g];o.innerHTML=!r?n[g]:dirNum.join(".")+" "+n[g];s.appendChild(o);j.appendChild(s)}f.appendChild(p)};c(document.getElementById("post-content"),document.getElementById("directory"),false)};postDirectoryBuild();
+</script>
+<script>
+    var postDirectory = new Headroom(document.getElementById("directory-content"), {
+        tolerance: 5,
+        offset: 240,
+        classes: {
+            initial: "initial",
+            pinned: "pinned",
+            unpinned: "unpinned"
+        }
+    });
+    postDirectory.init();
+</script>
+
+</body>
+
+</html>

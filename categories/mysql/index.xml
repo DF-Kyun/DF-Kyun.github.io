@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on DF-Kyun</title>
+    <link>https://heemooo.gitee.io/categories/mysql.html</link>
+    <description>Recent content in MySQL on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://heemooo.gitee.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows上配置免安装版MySQL</title>
+      <link>https://heemooo.gitee.io/post/windows/windows-install-mysql.html</link>
+      <pubDate>Wed, 03 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/windows/windows-install-mysql.html</guid>
+      <description>Windows上配置免安装版MySQL 软件版本MySQL Community Server 5.7.17 解压到本地，最好不要有中文路径 1：下载并解压 下载好后解压到本地。 解压后的文件如</description>
+    </item>
+    
+    <item>
+      <title>常用SQL语法记录</title>
+      <link>https://heemooo.gitee.io/post/mysql/sql-code.html</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/mysql/sql-code.html</guid>
+      <description>常用SQL语法记录 记录在开发中常遇到的SQL使用方法，以备后续查找 1.创建存储过程 DROP TEMPORARY TABLE IF EXISTS `#data_tempa`; create TEMPORARY TABLE IF NOT EXISTS `#data_tempa` select *from a; 2.按固定顺序排序 ORDER BY FIELD(field_name,value3,value2,value4,value1)</description>
+    </item>
+    
+  </channel>
+</rss>

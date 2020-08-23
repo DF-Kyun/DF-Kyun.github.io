@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+<head><title> RabbitMQ部署 - DF-Kyun</title><meta name="baidu-site-verification" content="jZRrwlvEpq" />
+<meta name="google-site-verification" content="OcQLxKrUrj5A9hpAdCQuoY-K7f5Ja4LUYt35Kxdwq_E" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="DF-Kyun的博客" />
+<meta name="keywords" content="DF-Kyun的博客" />
+<meta name="generator" content="Tale" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="/img/favicon.ico">
+<link href="https://cdn.staticfile.org/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/customui.css">
+
+<link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+<style>
+.hljs{display:block;overflow-x:auto;padding:0.5em;color:#383a42;background:#fafafa}.hljs-comment,.hljs-quote{color:#a0a1a7;}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#a626a4}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#e45649}.hljs-literal{color:#0184bb}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#50a14f}.hljs-built_in,.hljs-class .hljs-title{color:#c18401}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#986801}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#4078f2}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}
+</style>
+
+</head>
+
+<body id="blog">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">DF-Kyun的博客</a>
+            
+        </div>
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/">首页</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/post.html">归档</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/categories.html">分类</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/tags.html">标签</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/about.html">关于</a>
+                    
+
+                    
+
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+<header class="intro-header" style="background-image: url('/images/snowgitlabk.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    
+                    <h1>RabbitMQ部署</h1>
+
+                    
+                    <span class="meta">@DF-Kyun &nbsp;2018-06-11</span>
+                    <div class="tags post-tags">
+                        <div class="post-tags">
+                            <a href="https://df-kyun.github.io/tags/linux.html">linux</a>
+                            <a href="https://df-kyun.github.io/tags/rabbitmq.html">RabbitMQ</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    
+
+<div class="container">
+    <div class="am-g am-g-fixed blog-fixed">
+        <div class="am-u-lg-12 am-u-sm-12">
+            <article class="am-article blog-article-p article-trigger">
+                <div id="post-content" class="am-article-bd">
+                    <h3 id="rabbitmq部署">RabbitMQ部署</h3>
+<p>项目产品最近准备使用RabbitMQ作为消息推送的中间件，今天在公司内网部署了一下，因为内网环境的原因，刚开始是想在线安装erlang，但是有几个rpm依赖包始终无法下载，最终改为源码包安装，在这里记录一下安装过程，中间有些问题可能并不是常见问题。</p>
+<h4 id="安装准备">安装准备</h4>
+<pre><code>1）erlang语言环境
+    版本：20.3
+2）RabbitMQ
+    版本：3.7.5 
+</code></pre>
+<h4 id="erlang语言环境安装">erlang语言环境安装</h4>
+<p>官方下载安装包，官方地址：http://www.erlang.org/downloads，此次安装使用的版本是otp_src_20.3.tar.gz，下载之后上传到服务器</p>
+<p>在上传目录解压<br>
+​	tar -xvf　otp_src_20.3.tar.gz<br>
+安装依赖包<br>
+​	yum install -y gcc gcc-c++ unixODBC-devel openssl-devel ncurses-devel perl<br>
+检查环境、设置安装位置<br>
+​	./configure &ndash;prefix=/usr/local/erlang &ndash;without-javac<br>
+安装<br>
+​	make &amp;&amp; make install</p>
+<p>配置环境变量<br>
+​	vi /etc/profile<br>
+​	添加<br>
+​	export PATH=$PATH:/usr/local/erlang/bin<br>
+​	保存，执行 source /etc/profile</p>
+<p>测试erlang环境<br>
+​	在命令行中输入erl，出现erlang环境，则安装成功</p>
+<p>问题解决：<br>
+checking for perl&hellip; no_perl<br>
+configure: error: Perl is required to generate v2 to v1 mib converter script<br>
+configure: error: /bin/sh &lsquo;/root/software/otp_src_17.1/lib/snmp/./configure&rsquo; failed for snmp/.<br>
+configure: error: /bin/sh &lsquo;/root/software/otp_src_17.1/lib/configure&rsquo; failed for lib</p>
+<p>#如上，提示错误，解决方法：安装Perl<br>
+[root@localhost otp_src_17.1]# yum install perl</p>
+<h4 id="rabbitmq安装">RabbitMQ安装</h4>
+<p>官方下载安装包，官方地址：https://www.rabbitmq.com/install-rpm.html，本次使用的版本为rabbitmq-server-3.7.5-1.el7.noarch.rpm，下载之后上传服务器</p>
+<p>rpm包安装<br>
+rpm -ivh ./rabbitmq-server-3.7.5-1.el7.noarch.rpm</p>
+<p>安装会报错 有依赖关系<br>
+socat is needed by rabbitmq-server-3.7.5-1.el7.noarch</p>
+<p>解决方法：</p>
+<p>yum -y install socat</p>
+<p>此时会报错没有socat包或是找不到socat包，解决方法安装centos的epel的扩展源</p>
+<p>yum -y install epel-release</p>
+<p>之后执行yum -y install socat</p>
+<p>重新安装 socat</p>
+<p>接着安装rpm -ivh rabbitmq-server-3.7.5-1.el7.noarch.rpm 安装会报错，有依赖关系
+<img src="/assets/linux/20180611/1.png" alt="安装报错"></p>
+<p>解决方法不安装依赖关系</p>
+<p>rpm -i &ndash;nodeps rabbitmq-server-3.7.5-1.el7.noarch.rpm</p>
+<p>生成配置文件</p>
+<p>cp /usr/share/doc/rabbitmq-server-3.7.5/rabbitmq.config.example /etc/rabbitmq/rabbitmq.config</p>
+<p>启动rabbitmq</p>
+<p>service rabbitmq-server start</p>
+<p>报错，启动失败
+<img src="/assets/linux/20180611/2.png" alt="启动报错"></p>
+<p>查看错误详细信息如下：
+<img src="/assets/linux/20180611/3.png" alt="错误信息"></p>
+<p>通过上面描述中，发现是rabbitmq-server文件第85没有找到erlang，解决方法：在rabbitmq-server文件第85行处添加erlang的环境变量
+<img src="/assets/linux/20180611/4.png" alt="环境变量"></p>
+<p>再次启动，启动成功
+<img src="/assets/linux/20180611/5.png" alt="启动成功"></p>
+<p>然后开启管理页面插件</p>
+<p>rabbitmq-plugins enable rabbitmq_management</p>
+<p>添加管理员账号密码，默认的管理员用户密码为（guest/guest）</p>
+<p>rabbitmqctl add_user rabbitadmin 123456</p>
+<p>分配用户标签</p>
+<p>rabbitmqctl set_user_tags rabbitadmin administrator</p>
+<p>创建和赋角色完成后查看并确认</p>
+<p>rabbitmqctl list_users
+#Listing users &hellip;
+#admin	[administrator]
+#guest	[administrator]</p>
+<p>登录rabbitmq管理界面</p>
+<p>浏览器输入地址：http://服务器IP地址:15672/</p>
+<p>用户名密码：rabbitadmin/123456</p>
+<p><img src="/assets/linux/20180611/6.png" alt="访问页面"></p>
+
+                </div>
+            </article>
+             <div id="directory-content" class="directory-content">
+             <div id="directory"></div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+	
+	
+<footer class="blog-footer">
+    <div class="blog-text-center">© 2019 <a href="/">DF-Kyun</a> 由 
+        <a href="https://github.com/gohugoio/hugo" target="_blank">Hugo</a>
+         强力驱动 Theme is 
+        <a href="https://github.com/Heemooo/amaze" target="_blank">Amaze made by heemooo</a>
+    </div>
+</footer>
+<script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    var $body=document.body;var $toggle=document.querySelector(".navbar-toggle");var $navbar=document.querySelector("#huxblog_navbar");var $collapse=document.querySelector(".navbar-collapse");var __HuxNav__={close:function(){$navbar.className=" ";setTimeout(function(){if($navbar.className.indexOf("in")<0){$collapse.style.height="0px"}},400)},open:function(){$collapse.style.height="auto";$navbar.className+=" in"}};$toggle.addEventListener("click",function(a){if($navbar.className.indexOf("in")>0){__HuxNav__.close()}else{__HuxNav__.open()}});document.addEventListener("click",function(a){if(a.target==$toggle){return}if(a.target.className=="icon-bar"){return}__HuxNav__.close()});jQuery(document).ready(function(c){var d=1170;if(c(window).width()>d){var b=c(".navbar-custom").height(),a=c(".intro-header .container").height();c(window).on("scroll",{previousTop:0},function(){var e=c(window).scrollTop(),f=c(".side-catalog");if(e<this.previousTop){if(e>0&&c(".navbar-custom").hasClass("is-fixed")){c(".navbar-custom").addClass("is-visible")}else{c(".navbar-custom").removeClass("is-visible is-fixed")}}else{c(".navbar-custom").removeClass("is-visible");if(e>b&&!c(".navbar-custom").hasClass("is-fixed")){c(".navbar-custom").addClass("is-fixed")}}this.previousTop=e;f.show();if(e>(a+41)){f.addClass("fixed")}else{f.removeClass("fixed")}})}});
+</script>
+<script>
+    $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block)
+        })
+        $('table').addClass('am-table')
+    });
+</script>
+<script src="/js/headBand.min.js"></script>
+<script>
+    $('.headBand').headBand({
+        'background':'#008aff',
+        'height':"3"
+    });
+</script>
+<script src="https://cdn.bootcss.com/headroom/0.9.4/headroom.min.js"></script>
+<script>
+       var postDirectoryBuild=function(){var b=function a(l,h){var k=[],e=typeof h==="object",g=typeof h==="string",j,f,d;for(f=0,d=l.length;f<d;f++){j=l[f];if((j.nodeType===1||j.nodeType===9)&&(!h||e&&h.test(j.tagName.toLowerCase())||g&&j.tagName.toLowerCase()===h)){k.push(j)}}return k},c=function(e,f,r){var n=[],m=[],h,p,d,j,l,s,o,g,k,q;h=(function(i,C,A){var w=b(i.childNodes,/^h\d$/),x=[],v=1,B=1,z=0,D=1,t="directory"+(Math.random()+"").replace(/\D/,""),B,y,u;while(w.length){u=w.shift();C.push(u.innerHTML);y=+u.tagName.match(/\d/)[0];if(y>v){x.push(1);B+=1}else{if(y===B||y>B&&y<=v){x.push(0);B=B}else{if(y<B){x.push(y-B);B=y}}}z+=x[x.length-1];v=y;u.id=u.id||(t+D++);A.push(u.id)}if(z!==0&&x[0]===1){x[0]=0}return x})(e,n,m);j=p=document.createElement("ul");q=document.createElement("span");q.style="color:#F38181;font-weight:600;";q.innerHTML="目录";p.appendChild(q);dirNum=[];for(g=0,k=h.length;g<k;g++){d=h[g];if(d===1){l=document.createElement("ul");if(!j.lastElementChild){j.appendChild(document.createElement("li"))}j.lastElementChild.appendChild(l);j=l;dirNum.push(0)}else{if(d<0){d*=2;while(d++){if(d%2){dirNum.pop()}j=j.parentNode}}}dirNum[dirNum.length-1]++;s=document.createElement("li");o=document.createElement("a");o.href="#"+m[g];o.innerHTML=!r?n[g]:dirNum.join(".")+" "+n[g];s.appendChild(o);j.appendChild(s)}f.appendChild(p)};c(document.getElementById("post-content"),document.getElementById("directory"),false)};postDirectoryBuild();
+</script>
+<script>
+    var postDirectory = new Headroom(document.getElementById("directory-content"), {
+        tolerance: 5,
+        offset: 240,
+        classes: {
+            initial: "initial",
+            pinned: "pinned",
+            unpinned: "unpinned"
+        }
+    });
+    postDirectory.init();
+</script>
+
+</body>
+
+</html>

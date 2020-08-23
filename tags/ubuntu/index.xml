@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on DF-Kyun</title>
+    <link>https://heemooo.gitee.io/tags/ubuntu.html</link>
+    <description>Recent content in Ubuntu on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 11 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://heemooo.gitee.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows的Linux子系统切换用户</title>
+      <link>https://heemooo.gitee.io/post/windows/windows-change-subsystem-linux.html</link>
+      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/windows/windows-change-subsystem-linux.html</guid>
+      <description>Windows的Linux子系统切换用户 最近需要在Windows的Linux子系统中安装一个jdk，用来测试java代码在Linux上的运行</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu开启定时任务</title>
+      <link>https://heemooo.gitee.io/post/linux/ubuntu-start-corn-task.html</link>
+      <pubDate>Fri, 05 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/linux/ubuntu-start-corn-task.html</guid>
+      <description>Ubuntu开启定时任务 最近线上项目出现了一个问题，jvm出现内存溢出导致项目不能访问，但是重启之后就正常了，这个问题在本地还没有重现，因此</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装redis</title>
+      <link>https://heemooo.gitee.io/post/linux/ubuntu-install-redis.html</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/linux/ubuntu-install-redis.html</guid>
+      <description>Ubuntu安装redis 这里系统ubuntu14.04,redis-3.2.9.tar.gz,用户使用root 下载redis(法一) wget http://download.redis.io/releases/redis-3.2.9.tar.gz /</description>
+    </item>
+    
+  </channel>
+</rss>

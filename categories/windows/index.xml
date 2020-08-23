@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on DF-Kyun</title>
+    <link>https://heemooo.gitee.io/categories/windows.html</link>
+    <description>Recent content in Windows on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 16 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://heemooo.gitee.io/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一些实用的电脑软件推荐</title>
+      <link>https://heemooo.gitee.io/post/windows/recommend-software.html</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/windows/recommend-software.html</guid>
+      <description>一些实用的电脑软件推荐 QuickLook 话说 macOS 上有一个非常受欢迎的功能特性——空格键快速预览，你只要选中文件，按下键盘的空格键，即可立即预览文件的内容，而不</description>
+    </item>
+    
+    <item>
+      <title>Windows的Linux子系统切换用户</title>
+      <link>https://heemooo.gitee.io/post/windows/windows-change-subsystem-linux.html</link>
+      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/windows/windows-change-subsystem-linux.html</guid>
+      <description>Windows的Linux子系统切换用户 最近需要在Windows的Linux子系统中安装一个jdk，用来测试java代码在Linux上的运行</description>
+    </item>
+    
+  </channel>
+</rss>

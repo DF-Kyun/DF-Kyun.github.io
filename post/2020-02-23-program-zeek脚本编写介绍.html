@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+<head><title> zeek脚本编写介绍 - DF-Kyun</title><meta name="baidu-site-verification" content="jZRrwlvEpq" />
+<meta name="google-site-verification" content="OcQLxKrUrj5A9hpAdCQuoY-K7f5Ja4LUYt35Kxdwq_E" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="DF-Kyun的博客" />
+<meta name="keywords" content="DF-Kyun的博客" />
+<meta name="generator" content="Tale" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="/img/favicon.ico">
+<link href="https://cdn.staticfile.org/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/customui.css">
+
+<link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+<style>
+.hljs{display:block;overflow-x:auto;padding:0.5em;color:#383a42;background:#fafafa}.hljs-comment,.hljs-quote{color:#a0a1a7;}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#a626a4}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#e45649}.hljs-literal{color:#0184bb}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#50a14f}.hljs-built_in,.hljs-class .hljs-title{color:#c18401}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#986801}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#4078f2}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}
+</style>
+
+</head>
+
+<body id="blog">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">DF-Kyun的博客</a>
+            
+        </div>
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/">首页</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/post.html">归档</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/categories.html">分类</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/tags.html">标签</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/about.html">关于</a>
+                    
+
+                    
+
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+<header class="intro-header" style="background-image: url('/images/snowgitlabk.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    
+                    <h1>zeek脚本编写介绍</h1>
+
+                    
+                    <span class="meta">@DF-Kyun &nbsp;2020-02-23</span>
+                    <div class="tags post-tags">
+                        <div class="post-tags">
+                            <a href="https://df-kyun.github.io/tags/program.html">program</a>
+                            <a href="https://df-kyun.github.io/tags/zeek.html">zeek</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    
+
+<div class="container">
+    <div class="am-g am-g-fixed blog-fixed">
+        <div class="am-u-lg-12 am-u-sm-12">
+            <article class="am-article blog-article-p article-trigger">
+                <div id="post-content" class="am-article-bd">
+                    <p>最近学习了一下zeek，简单记录一下</p>
+<h2 id="zeek介绍">zeek介绍</h2>
+<p>Zeek是一个被动的开源网络流量分析器。它主要是一种安全监视器，可深入检查链接上的所有流量以查找可疑活动的迹象。使用Zeek最直接的好处是生成大量日志文件。这些日志不仅包括对网络上每个连接的全面记录，还包括应用程序层记录，例如所有HTTP会话及其请求的URI，密钥标头，MIME类型和服务器响应；带回复的DNS请求；SSL证书；SMTP会话的关键内容；以及更多。默认情况下，Zeek将所有这些信息写入结构合理的制表符分隔的日志文件中，这些文件适用于使用外部软件进行后处理。</p>
+<p>另外，在名称上，3.0版本之前是叫bro，之后改为zeek，相关的命令也都有变动</p>
+<h2 id="脚本编写">脚本编写</h2>
+<p>基本命令</p>
+<p><img src="/assets/program/20200223/1.png" alt=""></p>
+<h3 id="编写并通过bare模式执行脚本">编写并通过bare模式执行脚本</h3>
+<p>Zeek的脚本语言是事件驱动的，Zeek中的脚本编写取决于Zeek在处理网络流量时生成的事件，通过这些事件更改数据结构的状态以及对所提供信息进行决策。</p>
+<p>Zeek的核心作用是将事件放入有序的“事件队列”中，从而使事件处理程序可以按照“先到先得”的方式处理事件。实际上，这是Zeek的核心功能，因为如果没有编写脚本来对事件执行离散操作，则几乎没有可用的输出。对事件队列，生成的事件以及事件处理程序处理这些事件的方式的基本了解不仅是学习Zeek编写脚本的基础，而且还是了解Zeek本身的基础。</p>
+<p>一个简单的例子</p>
+<p><img src="/assets/program/20200223/2.png" alt=""></p>
+<h3 id="连接记录数据类型">连接记录数据类型</h3>
+<p><strong>connection 类型</strong>
+在Zeek定义的所有事件中，绝大多数事件都传递了connection数据类型，连接记录本身是大量的嵌套数据类型，用于跟踪连接在其生命周期内的状态。</p>
+<p>尽管Zeek能够进行数据包级别的处理，但其优势在于始发者与响应者之间的连接。因此，为连接生命周期的主要部分定义了一些事件，例如：
+<strong>new_connection</strong>
+<strong>connection_timeout</strong>
+<strong>connection_state_remove</strong></p>
+<p>其中，对连接记录数据类型有最好的展示的事件是connection_state_remove。Zeek会在决定从内存中删除该事件之前生成该事件。</p>
+<h3 id="通过网络抓包的方式获取数据然后执行脚本">通过网络抓包的方式获取数据，然后执行脚本</h3>
+<p>通过抓包来获取数据，模拟解析网络数据，查看连接内容
+<img src="/assets/program/20200223/3.png" alt=""></p>
+<p><img src="/assets/program/20200223/4.png" alt=""></p>
+<p><img src="/assets/program/20200223/5.png" alt=""></p>
+<h3 id="记录源ip和访问ip并计算两次访问间隔时间">记录源IP和访问IP，并计算两次访问间隔时间</h3>
+<p><img src="/assets/program/20200223/6.png" alt=""></p>
+<h3 id="自定义日志记录框架logging-framework">自定义日志记录框架（Logging Framework）</h3>
+<p><img src="/assets/program/20200223/7.png" alt=""></p>
+<p>首先，需要通知Zeek我们将通过向Log::ID枚举数添加值来添加另一个Log Stream 。在此脚本中，我们将值LOG追加到Log::ID枚举值，但是由于此值位于导出块中，Log::ID因此实际 将值追加到Factor::Log。
+接下来，我们需要定义组成日志数据的名称和值对，并规定其格式。该脚本定义了一个新的记录数据类型，称为Info（实际上， Factor::Info）和四个字段，为addr和port。记录类型中的每个字段都包含&amp;log 属性，在Log::write调用这些字段时应将这些字段传递给Logging Framework 。如果有任何不带&amp;log属性的名称/值对，则将在记录期间仅忽略这些字段，但在变量的生命周期内仍然可用。
+下一步是创建Log::create_stream，一个以 Log::ID和一条记录及日志文件作为其参数的日志记录流。在此示例中，我们调用 Log::create_stream方法并通过Factor::LOG、 Factor::Info记录和factor日志文件名作为参数。
+从现在开始，向Log::write命令发出Log::ID且格式正确的Factor::Info记录，将生成日志条目。结果如下：
+<img src="/assets/program/20200223/8.png" alt=""></p>
+<h3 id="通知框架">通知框架</h3>
+<p>要在Zeek中发出通知，只需要提供特定的Notice :: Type，然后调用NOTICE为其提供适当的Notice :: Info记录。通常，对NOTICE的调用仅包含Notice :: Type和简洁的消息。但是，在发出通知时，有更多选项，note :: Info中唯一必填的字段是note字段。
+<img src="/assets/program/20200223/9.png" alt=""></p>
+<p>会在notice.log文件中记录通知信息
+<img src="/assets/program/20200223/10.png" alt=""></p>
+<p>首先，脚本export块将LogNotice::Interesting_Hostname_Login值添加到枚举常量中， Notice::Type记录定义新的通知类型。然后，脚本将调用NOTICE和定义 $note，$msg，$sub，$id，和$uid记录。
+其次，通知加入系统通过Notice::policy挂钩进行管理 。一个Notice::policy钩其参数Notice::Info用来存放脚本在其调用时提供的信息记录。通过访问Notice::Info中特定的记录，进行逻辑判断，以更改用于处理系统中的通知的策略。</p>
+<h3 id="通知类型">通知类型</h3>
+<p>通知参数 | 描述</p>
+<ul>
+<li>| -
+ACTION_NONE | 不采取行动
+ACTION_LOG | 将通知发送到Notice :: LOG日志记录流。
+ACTION_EMAIL | 发送带有通知的电子邮件。
+ACTION_ALARM | 将通知发送到Notice :: Alarm_LOG流。然后每小时进行一次轮播，并将其内容以可读ASCII电子邮件发送到以下地址： Notice::mail_dest。</li>
+</ul>
+<p>示例中，我们已添加Notice:: ACTION_LOG到 n$actions集合中。该类型本身是可枚举的，
+Notice::ACTION_LOG操作将通知写入 Notice::LOG日志记录流，在默认配置中，日志将写入notice.log文件，并且不采取进一步操作。
+Notice::ACTION_EMAIL操作会将电子邮件发送到Notice::mail_dest 变量中定义的一个或多个地址，并将通知的详细信息作为电子邮件的正文。
+Notice::ACTION_ALARM将通知发送到Notice::ALARM_LOG日志记录流，然后每小时进行一次轮播，并将其内容以可读ASCII电子邮件发送到Notice::mail_dest</p>
+<h3 id="脚本使用">脚本使用</h3>
+<ul>
+<li>单一脚本</li>
+</ul>
+<p>将脚本以load方式添加到配置</p>
+<pre><code>echo ‘@load base/**' &gt;&gt; /usr/local/zeek/share/zeek/site/local.zeek
+</code></pre><p>重新加载</p>
+<pre><code>/usr/local/zeek/bin/zeekctl deploy
+</code></pre><ul>
+<li>多个脚本组成的目录</li>
+</ul>
+<p>如果指定目录名而不是文件名，则Zeek将尝试在该目录中加载名为&rdquo; __load __.zeek&quot;的文件（该文件将包含其他“ @load”指令）。
+将目录地址以load方式添加到配置</p>
+<pre><code>echo ‘@load base/**' &gt;&gt; /usr/local/zeek/share/zeek/site/local.zeek
+</code></pre><p>重新加载</p>
+<pre><code>/usr/local/zeek/bin/zeekctl deploy
+</code></pre>
+                </div>
+            </article>
+             <div id="directory-content" class="directory-content">
+             <div id="directory"></div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+	
+	
+<footer class="blog-footer">
+    <div class="blog-text-center">© 2019 <a href="/">DF-Kyun</a> 由 
+        <a href="https://github.com/gohugoio/hugo" target="_blank">Hugo</a>
+         强力驱动 Theme is 
+        <a href="https://github.com/Heemooo/amaze" target="_blank">Amaze made by heemooo</a>
+    </div>
+</footer>
+<script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    var $body=document.body;var $toggle=document.querySelector(".navbar-toggle");var $navbar=document.querySelector("#huxblog_navbar");var $collapse=document.querySelector(".navbar-collapse");var __HuxNav__={close:function(){$navbar.className=" ";setTimeout(function(){if($navbar.className.indexOf("in")<0){$collapse.style.height="0px"}},400)},open:function(){$collapse.style.height="auto";$navbar.className+=" in"}};$toggle.addEventListener("click",function(a){if($navbar.className.indexOf("in")>0){__HuxNav__.close()}else{__HuxNav__.open()}});document.addEventListener("click",function(a){if(a.target==$toggle){return}if(a.target.className=="icon-bar"){return}__HuxNav__.close()});jQuery(document).ready(function(c){var d=1170;if(c(window).width()>d){var b=c(".navbar-custom").height(),a=c(".intro-header .container").height();c(window).on("scroll",{previousTop:0},function(){var e=c(window).scrollTop(),f=c(".side-catalog");if(e<this.previousTop){if(e>0&&c(".navbar-custom").hasClass("is-fixed")){c(".navbar-custom").addClass("is-visible")}else{c(".navbar-custom").removeClass("is-visible is-fixed")}}else{c(".navbar-custom").removeClass("is-visible");if(e>b&&!c(".navbar-custom").hasClass("is-fixed")){c(".navbar-custom").addClass("is-fixed")}}this.previousTop=e;f.show();if(e>(a+41)){f.addClass("fixed")}else{f.removeClass("fixed")}})}});
+</script>
+<script>
+    $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block)
+        })
+        $('table').addClass('am-table')
+    });
+</script>
+<script src="/js/headBand.min.js"></script>
+<script>
+    $('.headBand').headBand({
+        'background':'#008aff',
+        'height':"3"
+    });
+</script>
+<script src="https://cdn.bootcss.com/headroom/0.9.4/headroom.min.js"></script>
+<script>
+       var postDirectoryBuild=function(){var b=function a(l,h){var k=[],e=typeof h==="object",g=typeof h==="string",j,f,d;for(f=0,d=l.length;f<d;f++){j=l[f];if((j.nodeType===1||j.nodeType===9)&&(!h||e&&h.test(j.tagName.toLowerCase())||g&&j.tagName.toLowerCase()===h)){k.push(j)}}return k},c=function(e,f,r){var n=[],m=[],h,p,d,j,l,s,o,g,k,q;h=(function(i,C,A){var w=b(i.childNodes,/^h\d$/),x=[],v=1,B=1,z=0,D=1,t="directory"+(Math.random()+"").replace(/\D/,""),B,y,u;while(w.length){u=w.shift();C.push(u.innerHTML);y=+u.tagName.match(/\d/)[0];if(y>v){x.push(1);B+=1}else{if(y===B||y>B&&y<=v){x.push(0);B=B}else{if(y<B){x.push(y-B);B=y}}}z+=x[x.length-1];v=y;u.id=u.id||(t+D++);A.push(u.id)}if(z!==0&&x[0]===1){x[0]=0}return x})(e,n,m);j=p=document.createElement("ul");q=document.createElement("span");q.style="color:#F38181;font-weight:600;";q.innerHTML="目录";p.appendChild(q);dirNum=[];for(g=0,k=h.length;g<k;g++){d=h[g];if(d===1){l=document.createElement("ul");if(!j.lastElementChild){j.appendChild(document.createElement("li"))}j.lastElementChild.appendChild(l);j=l;dirNum.push(0)}else{if(d<0){d*=2;while(d++){if(d%2){dirNum.pop()}j=j.parentNode}}}dirNum[dirNum.length-1]++;s=document.createElement("li");o=document.createElement("a");o.href="#"+m[g];o.innerHTML=!r?n[g]:dirNum.join(".")+" "+n[g];s.appendChild(o);j.appendChild(s)}f.appendChild(p)};c(document.getElementById("post-content"),document.getElementById("directory"),false)};postDirectoryBuild();
+</script>
+<script>
+    var postDirectory = new Headroom(document.getElementById("directory-content"), {
+        tolerance: 5,
+        offset: 240,
+        classes: {
+            initial: "initial",
+            pinned: "pinned",
+            unpinned: "unpinned"
+        }
+    });
+    postDirectory.init();
+</script>
+
+</body>
+
+</html>

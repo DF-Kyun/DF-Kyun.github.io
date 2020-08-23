@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RabbitMQ on DF-Kyun</title>
+    <link>https://df-kyun.github.io/tags/rabbitmq.html</link>
+    <description>Recent content in RabbitMQ on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://df-kyun.github.io/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HAProxy实现RabbitMQ负载均衡</title>
+      <link>https://df-kyun.github.io/post/2018-07-05-linux-haproxy%E5%AE%9E%E7%8E%B0rabbitmq%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1.html</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2018-07-05-linux-haproxy%E5%AE%9E%E7%8E%B0rabbitmq%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1.html</guid>
+      <description>HAProxy实现RabbitMQ负载均衡 最近看了一下RabbitMQ的负载均衡策略，对于RabbitMQ集群来说，主要有两类负载均衡，客户</description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ集群搭建</title>
+      <link>https://df-kyun.github.io/post/2018-07-02-linux-rabbitmq%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2018-07-02-linux-rabbitmq%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html</guid>
+      <description>RabbitMQ集群搭建 最近看了一下RabbitMQ的相关，准备搭建一个RabbitMQ集群，尝试集群部分的操作。 安装准备 本例以两个节点为例</description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ部署</title>
+      <link>https://df-kyun.github.io/post/2018-06-11-linux-rabbitmq%E9%83%A8%E7%BD%B2.html</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2018-06-11-linux-rabbitmq%E9%83%A8%E7%BD%B2.html</guid>
+      <description>RabbitMQ部署 项目产品最近准备使用RabbitMQ作为消息推送的中间件，今天在公司内网部署了一下，因为内网环境的原因，刚开始是想在线安</description>
+    </item>
+    
+  </channel>
+</rss>

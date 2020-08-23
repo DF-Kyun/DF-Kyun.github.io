@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nginx on DF-Kyun</title>
+    <link>https://df-kyun.github.io/tags/nginx.html</link>
+    <description>Recent content in nginx on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 11 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://df-kyun.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nginx集成Naxsi构建WAF</title>
+      <link>https://df-kyun.github.io/post/2018-07-11-linux-nginx%E9%9B%86%E6%88%90naxsi%E6%9E%84%E5%BB%BAwaf.html</link>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2018-07-11-linux-nginx%E9%9B%86%E6%88%90naxsi%E6%9E%84%E5%BB%BAwaf.html</guid>
+      <description>Nginx集成Naxsi构建WAF Naxsi是一个开放源代码、高效、低维护规则的Nginx Web应用防火墙模块，Naxsi的主要目标是帮助人</description>
+    </item>
+    
+  </channel>
+</rss>

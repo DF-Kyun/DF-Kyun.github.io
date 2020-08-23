@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DF-Kyun</title>
+    <link>https://df-kyun.github.io/</link>
+    <description>Recent content on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://df-kyun.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于</title>
+      <link>https://df-kyun.github.io/about.html</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>https://df-kyun.github.io/about.html</guid>
+      
+        <description>&lt;p&gt;Welcome to visit my blog!&lt;/p&gt;
+&lt;h4 id=&#34;1personal-info&#34;&gt;1.Personal Info&lt;/h4&gt;
+&lt;p&gt;Name: DF-Kyun&lt;br&gt;
+City: Jinan, China&lt;br&gt;
+Career: Software developer(Linux&amp;amp;Web)&lt;/p&gt;
+&lt;h4 id=&#34;2my-links&#34;&gt;2.My Links&lt;/h4&gt;
+&lt;p&gt;Blog: &lt;a href=&#34;https://df-kyun.github.io/&#34;&gt;https://df-kyun.github.io/&lt;/a&gt;&lt;br&gt;
+GitHub: &lt;a href=&#34;https://github.com/DF-Kyun&#34;&gt;https://github.com/DF-Kyun&lt;/a&gt;&lt;br&gt;
+简书：&lt;a href=&#34;https://www.jianshu.com/u/81274d271e6b&#34;&gt;https://www.jianshu.com/u/81274d271e6b&lt;/a&gt;&lt;br&gt;
+cnblogs：&lt;a href=&#34;https://www.cnblogs.com/DF-Kyun/&#34;&gt;https://www.cnblogs.com/DF-Kyun/&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3contract&#34;&gt;3.Contract&lt;/h4&gt;
+&lt;p&gt;Email: &lt;a href=&#34;mailto:dfkyun@gmail.com&#34;&gt;dfkyun@gmail.com&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Posts</title>
+      <link>https://df-kyun.github.io/post.html</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post.html</guid>
+      
+        <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

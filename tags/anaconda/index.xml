@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anaconda on DF-Kyun</title>
+    <link>https://df-kyun.github.io/tags/anaconda.html</link>
+    <description>Recent content in Anaconda on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://df-kyun.github.io/tags/anaconda/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Window10下安装anaconda3 2019.10目录文件不完整</title>
+      <link>https://df-kyun.github.io/post/2020-02-10-program-window10%E4%B8%8B%E5%AE%89%E8%A3%85anaconda3-2019.10%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%E4%B8%8D%E5%AE%8C%E6%95%B4.html</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2020-02-10-program-window10%E4%B8%8B%E5%AE%89%E8%A3%85anaconda3-2019.10%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%E4%B8%8D%E5%AE%8C%E6%95%B4.html</guid>
+      <description>最近学习Anaconda，安装了最新版本的Anaconda3-2019.10，结果安装目录下只有这么些东西： 并且安装完成后开始菜单没有如下的</description>
+    </item>
+    
+  </channel>
+</rss>

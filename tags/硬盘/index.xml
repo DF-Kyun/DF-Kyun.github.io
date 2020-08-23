@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>硬盘 on DF-Kyun</title>
+    <link>https://df-kyun.github.io/tags/%E7%A1%AC%E7%9B%98.html</link>
+    <description>Recent content in 硬盘 on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 28 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://df-kyun.github.io/tags/%E7%A1%AC%E7%9B%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>虚拟机Vcenter添加硬盘无法识别</title>
+      <link>https://df-kyun.github.io/post/2018-04-28-linux-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB.html</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2018-04-28-linux-%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB.html</guid>
+      <description>虚拟机Vcenter添加硬盘无法识别 最近在项目上遇到的一个问题，在Vcenter中为虚拟机添加一块硬盘用于扩展逻辑卷，但是添加之后发现使用 fdisk</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on DF-Kyun</title>
+    <link>https://heemooo.gitee.io/tags/redis.html</link>
+    <description>Recent content in Redis on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 12 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://heemooo.gitee.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SpringBoot项目使用Redis做缓存</title>
+      <link>https://heemooo.gitee.io/post/spring/springboot-redis.html</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/spring/springboot-redis.html</guid>
+      <description>SpringBoot项目使用Redis做缓存 最近打算将blog项目重构，由原来的blade框架搭建的tale博客重构为SpringBoot+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装redis</title>
+      <link>https://heemooo.gitee.io/post/linux/ubuntu-install-redis.html</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/linux/ubuntu-install-redis.html</guid>
+      <description>Ubuntu安装redis 这里系统ubuntu14.04,redis-3.2.9.tar.gz,用户使用root 下载redis(法一) wget http://download.redis.io/releases/redis-3.2.9.tar.gz /</description>
+    </item>
+    
+  </channel>
+</rss>

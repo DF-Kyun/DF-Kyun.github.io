@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SpringBoot on DF-Kyun</title>
+    <link>https://heemooo.gitee.io/tags/springboot.html</link>
+    <description>Recent content in SpringBoot on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 12 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://heemooo.gitee.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SpringBoot项目使用Redis做缓存</title>
+      <link>https://heemooo.gitee.io/post/spring/springboot-redis.html</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/spring/springboot-redis.html</guid>
+      <description>SpringBoot项目使用Redis做缓存 最近打算将blog项目重构，由原来的blade框架搭建的tale博客重构为SpringBoot+</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot自定义配置文件</title>
+      <link>https://heemooo.gitee.io/post/spring/spring-use-ourself-properties.html</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/spring/spring-use-ourself-properties.html</guid>
+      <description>SpringBoot自定义配置文件 最近打算将blog项目重构，由原来的blade框架搭建的tale博客重构为SpringBoot+Freem</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot项目启动时执行自定义操作</title>
+      <link>https://heemooo.gitee.io/post/spring/spring-start-exec-operate.html</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/spring/spring-start-exec-operate.html</guid>
+      <description>SpringBoot项目启动时执行自定义操作 最近打算将blog项目重构，由原来的blade框架搭建的tale博客重构为SpringBoot+</description>
+    </item>
+    
+  </channel>
+</rss>

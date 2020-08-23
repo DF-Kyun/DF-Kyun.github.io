@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sql on DF-Kyun</title>
+    <link>https://df-kyun.github.io/tags/sql.html</link>
+    <description>Recent content in sql on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 15 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://df-kyun.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>sq优化的几种方法（转）</title>
+      <link>https://df-kyun.github.io/post/2018-09-15-program-sql%E4%BC%98%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E8%BD%AC.html</link>
+      <pubDate>Sat, 15 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2018-09-15-program-sql%E4%BC%98%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E8%BD%AC.html</guid>
+      <description>sq优化的几种方法（转） 在sql查询中为了提高查询效率，我们常常会采取一些措施对查询语句进行sql优化，下面总结的一些方法，有需要的可以参考</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reflect on DF-Kyun</title>
+    <link>https://heemooo.gitee.io/tags/reflect.html</link>
+    <description>Recent content in Reflect on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 19 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://heemooo.gitee.io/tags/reflect/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>利用Java反射封装Jdbc的查询结果</title>
+      <link>https://heemooo.gitee.io/post/java/java-reflect-jdbc.html</link>
+      <pubDate>Fri, 19 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/java/java-reflect-jdbc.html</guid>
+      <description>利用Java反射封装Jdbc的查询结果 开发中若是使用Jdbc来查询数据，结果会保存在一个ResultSet结果集中，但是我们希望得到的是一个</description>
+    </item>
+    
+  </channel>
+</rss>

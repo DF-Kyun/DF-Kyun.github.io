@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zeek on DF-Kyun</title>
+    <link>https://df-kyun.github.io/tags/zeek.html</link>
+    <description>Recent content in zeek on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://df-kyun.github.io/tags/zeek/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>zeek脚本编写介绍</title>
+      <link>https://df-kyun.github.io/post/2020-02-23-program-zeek%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E4%BB%8B%E7%BB%8D.html</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2020-02-23-program-zeek%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E4%BB%8B%E7%BB%8D.html</guid>
+      <description>最近学习了一下zeek，简单记录一下 zeek介绍 Zeek是一个被动的开源网络流量分析器。它主要是一种安全监视器，可深入检查链接上的所有流量以</description>
+    </item>
+    
+  </channel>
+</rss>

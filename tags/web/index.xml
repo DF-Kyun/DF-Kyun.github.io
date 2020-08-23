@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on DF-Kyun</title>
+    <link>https://df-kyun.github.io/tags/web.html</link>
+    <description>Recent content in web on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 04 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://df-kyun.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>sonar、jenkins构建代码检查</title>
+      <link>https://df-kyun.github.io/post/2018-05-04-web-sonarjenkins%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5.html</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2018-05-04-web-sonarjenkins%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5.html</guid>
+      <description>sonar、jenkins构建代码检查 最近因为工作原因构建了一下代码检查流程，这里记录一下 安装sonar 预置条件 1）已安装JAVA环境 版本：</description>
+    </item>
+    
+  </channel>
+</rss>

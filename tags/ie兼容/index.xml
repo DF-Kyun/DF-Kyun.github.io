@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IE兼容 on DF-Kyun</title>
+    <link>https://heemooo.gitee.io/tags/ie%E5%85%BC%E5%AE%B9.html</link>
+    <description>Recent content in IE兼容 on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 06 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://heemooo.gitee.io/tags/ie%E5%85%BC%E5%AE%B9/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS IE条件注释</title>
+      <link>https://heemooo.gitee.io/post/css/css-ie-conditional-comment.html</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/css/css-ie-conditional-comment.html</guid>
+      <description>CSS IE条件注释 推荐使用条件注释的方式兼容IE,使用Hack方式不宜维护，且有些方面并不容易实现，比如IE里的奇行种IE8，要实现完全正对它的</description>
+    </item>
+    
+    <item>
+      <title>IE6,7中JSON未定义</title>
+      <link>https://heemooo.gitee.io/post/js/ie67-json-not-define.html</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/js/ie67-json-not-define.html</guid>
+      <description>IE6,7中JSON未定义 问题：在IE6,7,8中使用JSON全局变量解析json数据时会报JSON未定义的异常，导致JavaScript终</description>
+    </item>
+    
+  </channel>
+</rss>

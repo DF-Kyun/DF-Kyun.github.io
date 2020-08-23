@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaWeb on DF-Kyun</title>
+    <link>https://heemooo.gitee.io/tags/javaweb.html</link>
+    <description>Recent content in JavaWeb on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 14 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://heemooo.gitee.io/tags/javaweb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaWeb会话跟踪</title>
+      <link>https://heemooo.gitee.io/post/java/java-web-session-tracking.html</link>
+      <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/java/java-web-session-tracking.html</guid>
+      <description>JavaWeb会话跟踪 岂能尽如人意,但求无愧于心 会话跟踪的需求 ????HTTP是“无状态”协议：客户程序每次读取 Web 页面，都打开到 Web 服务器的单</description>
+    </item>
+    
+    <item>
+      <title>JavaWeb项目启动加载顺序</title>
+      <link>https://heemooo.gitee.io/post/java/java-web-project-starting-sequence.html</link>
+      <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://heemooo.gitee.io/post/java/java-web-project-starting-sequence.html</guid>
+      <description>JavaWeb项目启动加载顺序 原文地址：JAVA Web.xml 加载顺序 此处以javaweb servlet为例 启动web项目时,web容器（如：tomca</description>
+    </item>
+    
+  </channel>
+</rss>

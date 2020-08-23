@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>program on DF-Kyun</title>
+    <link>https://df-kyun.github.io/categories/program.html</link>
+    <description>Recent content in program on DF-Kyun</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://df-kyun.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>zeek脚本编写介绍</title>
+      <link>https://df-kyun.github.io/post/2020-02-23-program-zeek%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E4%BB%8B%E7%BB%8D.html</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2020-02-23-program-zeek%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E4%BB%8B%E7%BB%8D.html</guid>
+      <description>最近学习了一下zeek，简单记录一下 zeek介绍 Zeek是一个被动的开源网络流量分析器。它主要是一种安全监视器，可深入检查链接上的所有流量以</description>
+    </item>
+    
+    <item>
+      <title>Window10下安装anaconda3 2019.10目录文件不完整</title>
+      <link>https://df-kyun.github.io/post/2020-02-10-program-window10%E4%B8%8B%E5%AE%89%E8%A3%85anaconda3-2019.10%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%E4%B8%8D%E5%AE%8C%E6%95%B4.html</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2020-02-10-program-window10%E4%B8%8B%E5%AE%89%E8%A3%85anaconda3-2019.10%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%E4%B8%8D%E5%AE%8C%E6%95%B4.html</guid>
+      <description>最近学习Anaconda，安装了最新版本的Anaconda3-2019.10，结果安装目录下只有这么些东西： 并且安装完成后开始菜单没有如下的</description>
+    </item>
+    
+    <item>
+      <title>IntelliJ IDEA使用</title>
+      <link>https://df-kyun.github.io/post/2018-11-04-program-intellij-idea%E4%BD%BF%E7%94%A8.html</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2018-11-04-program-intellij-idea%E4%BD%BF%E7%94%A8.html</guid>
+      <description>IntelliJ IDEA使用 这篇博客是慕课网上视频的学习笔记，手打出来方便日后查阅 参考博客地址 无处不在的跳转 项目之间跳转 cltrl+alt+]/[ 快捷键查找（Help下）ctrl</description>
+    </item>
+    
+    <item>
+      <title>sq优化的几种方法（转）</title>
+      <link>https://df-kyun.github.io/post/2018-09-15-program-sql%E4%BC%98%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E8%BD%AC.html</link>
+      <pubDate>Sat, 15 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2018-09-15-program-sql%E4%BC%98%E5%8C%96%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E8%BD%AC.html</guid>
+      <description>sq优化的几种方法（转） 在sql查询中为了提高查询效率，我们常常会采取一些措施对查询语句进行sql优化，下面总结的一些方法，有需要的可以参考</description>
+    </item>
+    
+  </channel>
+</rss>

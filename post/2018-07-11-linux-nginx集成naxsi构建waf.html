@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+
+<head><title> Nginx集成Naxsi构建WAF - DF-Kyun</title><meta name="baidu-site-verification" content="jZRrwlvEpq" />
+<meta name="google-site-verification" content="OcQLxKrUrj5A9hpAdCQuoY-K7f5Ja4LUYt35Kxdwq_E" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="DF-Kyun的博客" />
+<meta name="keywords" content="DF-Kyun的博客" />
+<meta name="generator" content="Tale" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="/img/favicon.ico">
+<link href="https://cdn.staticfile.org/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/customui.css">
+
+<link href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+<style>
+.hljs{display:block;overflow-x:auto;padding:0.5em;color:#383a42;background:#fafafa}.hljs-comment,.hljs-quote{color:#a0a1a7;}.hljs-doctag,.hljs-keyword,.hljs-formula{color:#a626a4}.hljs-section,.hljs-name,.hljs-selector-tag,.hljs-deletion,.hljs-subst{color:#e45649}.hljs-literal{color:#0184bb}.hljs-string,.hljs-regexp,.hljs-addition,.hljs-attribute,.hljs-meta-string{color:#50a14f}.hljs-built_in,.hljs-class .hljs-title{color:#c18401}.hljs-attr,.hljs-variable,.hljs-template-variable,.hljs-type,.hljs-selector-class,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-number{color:#986801}.hljs-symbol,.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-title{color:#4078f2}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}
+</style>
+
+</head>
+
+<body id="blog">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">DF-Kyun的博客</a>
+            
+        </div>
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/">首页</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/post.html">归档</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/categories.html">分类</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/tags.html">标签</a>
+                    
+
+                    
+
+                    </li>
+                    
+                    <li class="menu-item">
+                    
+                    
+                    
+                    <a class="menu-item-link" href="https://df-kyun.github.io/about.html">关于</a>
+                    
+
+                    
+
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+<header class="intro-header" style="background-image: url('/images/snowgitlabk.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    
+                    <h1>Nginx集成Naxsi构建WAF</h1>
+
+                    
+                    <span class="meta">@DF-Kyun &nbsp;2018-07-11</span>
+                    <div class="tags post-tags">
+                        <div class="post-tags">
+                            <a href="https://df-kyun.github.io/tags/linux.html">linux</a>
+                            <a href="https://df-kyun.github.io/tags/nginx.html">nginx</a>
+                            <a href="https://df-kyun.github.io/tags/naxsi.html">naxsi</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    
+
+<div class="container">
+    <div class="am-g am-g-fixed blog-fixed">
+        <div class="am-u-lg-12 am-u-sm-12">
+            <article class="am-article blog-article-p article-trigger">
+                <div id="post-content" class="am-article-bd">
+                    <h3 id="nginx集成naxsi构建waf">Nginx集成Naxsi构建WAF</h3>
+<p>Naxsi是一个开放源代码、高效、低维护规则的Nginx Web应用防火墙模块，Naxsi的主要目标是帮助人们加固Web应用程序，以抵御SQL注入、跨站脚本、跨域伪造请求、本地和远程文件等包含的漏洞。<br>
+官网：https://github.com/nbs-system/naxsi</p>
+<h4 id="安装naxsi">安装Naxsi</h4>
+<p>下载nginx和naxsi，这里下载的版本如下：</p>
+<pre><code>nginx-1.12.2.tar.gz   
+naxsi-0.55.3.tar.gz   
+</code></pre>
+<p>安装依赖</p>
+<pre><code>yum install pcre pcre-devel  libxml2 libxml2-devel zlib zlib-devel openssl openssl-devel   
+</code></pre>
+<p>解压安装包，这里解压到/opt/apps下</p>
+<pre><code># tar xzvf naxsi-0.55.3.tar.gz
+# tar xzvf nginx-1.9.2.tar.gz
+# cd nginx-1.9.2
+# ./configure --add-module=/opt/apps/naxsi-0.55.3/naxsi_src/
+# make &amp;&amp; make install
+</code></pre>
+<h4 id="配置naxsi">配置Naxsi</h4>
+<p><strong>核心规则</strong><br>
+首先需要将Naxsi核心规则文件naxsi_core.rules引入到Nginx主配置文件中。</p>
+<pre><code>cp /opt/apps/naxsi-0.55.3/naxsi_config/naxsi_core.rules  /usr/local/nginx/conf/
+</code></pre>
+<p>修改Nginx主配置文件，在http区块中插入以下内容：<br>
+# vim /usr/local/nginx/conf/nginx.conf</p>
+<pre><code>http {
+...
+include /usr/local/nginx/conf/naxsi_core.rules;
+...
+}
+</code></pre>
+<p><strong>子规则</strong><br>
+新建子规则<br>
+# vim  /usr/local/nginx/conf/naxsi.rules</p>
+<pre><code># 启用Naxsi模块
+SecRulesEnabled;
+#启用学习模式，即拦截请求后不拒绝访问，只将触发规则的请求写入日志
+LearningMode;
+# 拒绝访问时展示的页面
+DeniedUrl &quot;/RequestDenied&quot;;
+# 检查规则
+CheckRule &quot;$SQL &gt;= 8&quot; BLOCK;
+CheckRule &quot;$RFI &gt;= 8&quot; BLOCK;
+CheckRule &quot;$TRAVERSAL &gt;= 4&quot; BLOCK;
+CheckRule &quot;$EVADE &gt;= 4&quot; BLOCK;
+CheckRule &quot;$XSS &gt;= 8&quot; BLOCK;
+error_log  /var/log/nginx/naxsi.log;
+</code></pre>
+<p>以上配置的作用是启用Naxsi模块并拦截指定的非法请求。如果要关闭Naxsi模块，可使用SecRulesDisabled选项。<br>
+学习模式只是用来帮助你在不影响正常访问的情况下找到触发安全规则的合法请求，然后将触发规则写入naxsi.log。如果触发会增加如下日志信息：</p>
+<pre><code>2018/07/11 11:24:08 [error] 2465#0: *111 NAXSI_FMT: 				ip=10.72.79.129&amp;server=10.110.8.34&amp;uri=/&amp;learning=0&amp;vers=0.55.3&amp;total_processed=1&amp;total_blocked=1&amp;block=1&amp;cscore0=$SQL&amp;score0=8&amp;zone0=ARGS&amp;id0=1000&amp;var_name0=id, client: 10.72.79.129, server: localhost, request: &quot;GET /?id=select%20*%20from HTTP/1.1&quot;, host: &quot;10.110.8.34&quot;
+</code></pre>
+<p>注意在最后生产环境一定要把学习模式关闭，不然是没有拒绝访问防御的效果。<br>
+DeniedUrl是把拒绝的请求发送到内部URL，CheckRule是设置各规则不同的触发阈值。 一旦该阈值触发，请求将被阻塞。</p>
+<p>接下来，我们在Server区块中引入上面定义的Naxsi子规则。</p>
+<p># vim /usr/local/nginx/conf/nginx.conf</p>
+<pre><code>server {
+    ....
+    location / {
+    # 引用Naxsi子规则
+    include  /usr/local/nginx/conf/naxsi.rules;
+    root   html;
+    index  index.html index.htm;
+    }
+    # 配置拦截后拒绝访问时展示的页面，这里直接返回403。
+    location /RequestDenied {
+        return 403;
+    }
+}
+</code></pre>
+<p>验证配置文件</p>
+<pre><code>/usr/local/nginx/sbin/nginx -t  
+</code></pre>
+<p>启动、测试</p>
+<pre><code>/usr/local/nginx/sbin/nginx
+</code></pre>
+<p>正常访问页面：<br>
+<img src="/assets/linux/201807/1101.png" alt="正常访问"></p>
+<p>访问地址添加?message=system(%27ls%20-l%27)，会转跳到拦截页面<br>
+<img src="/assets/linux/201807/1102.png" alt="脚本注入"></p>
+<p>访问地址添加sql，?id=select%20*%20from<br>
+<img src="/assets/linux/201807/1103.png" alt="sql注入"></p>
+<h4 id="配置naxsi白名单">配置Naxsi白名单</h4>
+<p><strong>白名单规则</strong></p>
+<p>wl:ID (White List ID) 哪些拦截规则会进入白名单。正确的语法是:</p>
+<pre><code>wl:0:把所有拦截规则加入白名单
+wl:42:把ID为42的拦截规则加入白名单
+wl:42,41,43:把ID为42, 41和43的拦截规则加入白名单
+wl:-42:把所有拦截规则加入白名单，除了ID为42的拦截规则
+</code></pre>
+<p>mz:(Match Zones) 指定的区域会生效本条白名单。</p>
+<pre><code>ARGS: GET的整个参数，如: foo=bar&amp;in=%20
+$ARGS_VAR: GET参数的参数名, 如：foo=bar&amp;in=%20中的foo和in
+$ARGS_VAR_X: 正则匹配的GET参数的参数名
+HEADERS: 整个HTTP协议头
+$HEADERS_VAR: HTTP协议头的名字
+$HEADERS_VAR_X: 正则匹配的HTTP协议头的名字
+BODY: POST的整个参数内容
+$BODY_VAR: POST参数的参数名
+$BODY_VAR_X: 正则匹配的POST参数的参数名
+URL: URL(?前的)
+$URL_X: 正则匹配的URL(?前的)
+FILE_EXT: 文件名 (POST上传文件时上传的文件名）
+</code></pre>
+<p><strong>设置白名单</strong> <br>
+# vim /usr/local/nginx/conf/naxsi_whitelists.rules</p>
+<pre><code>BasicRule wl:1000 &quot;mz:ARGS&quot;;
+</code></pre>
+<p>以上设置对于#1000号规则，将所有的GET请求参数加入白名单，#1000规则主要是sql关键字，配置此条信息之后，之前的sql注入测试将会通过拦截</p>
+
+                </div>
+            </article>
+             <div id="directory-content" class="directory-content">
+             <div id="directory"></div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+	
+	
+<footer class="blog-footer">
+    <div class="blog-text-center">© 2019 <a href="/">DF-Kyun</a> 由 
+        <a href="https://github.com/gohugoio/hugo" target="_blank">Hugo</a>
+         强力驱动 Theme is 
+        <a href="https://github.com/Heemooo/amaze" target="_blank">Amaze made by heemooo</a>
+    </div>
+</footer>
+<script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    var $body=document.body;var $toggle=document.querySelector(".navbar-toggle");var $navbar=document.querySelector("#huxblog_navbar");var $collapse=document.querySelector(".navbar-collapse");var __HuxNav__={close:function(){$navbar.className=" ";setTimeout(function(){if($navbar.className.indexOf("in")<0){$collapse.style.height="0px"}},400)},open:function(){$collapse.style.height="auto";$navbar.className+=" in"}};$toggle.addEventListener("click",function(a){if($navbar.className.indexOf("in")>0){__HuxNav__.close()}else{__HuxNav__.open()}});document.addEventListener("click",function(a){if(a.target==$toggle){return}if(a.target.className=="icon-bar"){return}__HuxNav__.close()});jQuery(document).ready(function(c){var d=1170;if(c(window).width()>d){var b=c(".navbar-custom").height(),a=c(".intro-header .container").height();c(window).on("scroll",{previousTop:0},function(){var e=c(window).scrollTop(),f=c(".side-catalog");if(e<this.previousTop){if(e>0&&c(".navbar-custom").hasClass("is-fixed")){c(".navbar-custom").addClass("is-visible")}else{c(".navbar-custom").removeClass("is-visible is-fixed")}}else{c(".navbar-custom").removeClass("is-visible");if(e>b&&!c(".navbar-custom").hasClass("is-fixed")){c(".navbar-custom").addClass("is-fixed")}}this.previousTop=e;f.show();if(e>(a+41)){f.addClass("fixed")}else{f.removeClass("fixed")}})}});
+</script>
+<script>
+    $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block)
+        })
+        $('table').addClass('am-table')
+    });
+</script>
+<script src="/js/headBand.min.js"></script>
+<script>
+    $('.headBand').headBand({
+        'background':'#008aff',
+        'height':"3"
+    });
+</script>
+<script src="https://cdn.bootcss.com/headroom/0.9.4/headroom.min.js"></script>
+<script>
+       var postDirectoryBuild=function(){var b=function a(l,h){var k=[],e=typeof h==="object",g=typeof h==="string",j,f,d;for(f=0,d=l.length;f<d;f++){j=l[f];if((j.nodeType===1||j.nodeType===9)&&(!h||e&&h.test(j.tagName.toLowerCase())||g&&j.tagName.toLowerCase()===h)){k.push(j)}}return k},c=function(e,f,r){var n=[],m=[],h,p,d,j,l,s,o,g,k,q;h=(function(i,C,A){var w=b(i.childNodes,/^h\d$/),x=[],v=1,B=1,z=0,D=1,t="directory"+(Math.random()+"").replace(/\D/,""),B,y,u;while(w.length){u=w.shift();C.push(u.innerHTML);y=+u.tagName.match(/\d/)[0];if(y>v){x.push(1);B+=1}else{if(y===B||y>B&&y<=v){x.push(0);B=B}else{if(y<B){x.push(y-B);B=y}}}z+=x[x.length-1];v=y;u.id=u.id||(t+D++);A.push(u.id)}if(z!==0&&x[0]===1){x[0]=0}return x})(e,n,m);j=p=document.createElement("ul");q=document.createElement("span");q.style="color:#F38181;font-weight:600;";q.innerHTML="目录";p.appendChild(q);dirNum=[];for(g=0,k=h.length;g<k;g++){d=h[g];if(d===1){l=document.createElement("ul");if(!j.lastElementChild){j.appendChild(document.createElement("li"))}j.lastElementChild.appendChild(l);j=l;dirNum.push(0)}else{if(d<0){d*=2;while(d++){if(d%2){dirNum.pop()}j=j.parentNode}}}dirNum[dirNum.length-1]++;s=document.createElement("li");o=document.createElement("a");o.href="#"+m[g];o.innerHTML=!r?n[g]:dirNum.join(".")+" "+n[g];s.appendChild(o);j.appendChild(s)}f.appendChild(p)};c(document.getElementById("post-content"),document.getElementById("directory"),false)};postDirectoryBuild();
+</script>
+<script>
+    var postDirectory = new Headroom(document.getElementById("directory-content"), {
+        tolerance: 5,
+        offset: 240,
+        classes: {
+            initial: "initial",
+            pinned: "pinned",
+            unpinned: "unpinned"
+        }
+    });
+    postDirectory.init();
+</script>
+
+</body>
+
+</html>
