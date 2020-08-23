@@ -10,42 +10,63 @@
   
   <url>
     <loc>https://df-kyun.github.io/categories.html</loc>
-    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://df-kyun.github.io/</loc>
-    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://df-kyun.github.io/tags/flowable.html</loc>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://df-kyun.github.io/post/2020-08-23-program-flowable%E4%BB%BB%E5%8A%A1%E7%9B%91%E5%90%AC%E5%99%A8%E5%92%8Cjava%E6%9C%8D%E5%8A%A1%E4%BB%BB%E5%8A%A1%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98.html</loc>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://df-kyun.github.io/post/2020-08-23-program-flowable%E5%B7%A5%E4%BD%9C%E6%B5%81%E9%80%82%E9%85%8Dkingbasees-v8.html</loc>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://df-kyun.github.io/post.html</loc>
-    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://df-kyun.github.io/tags/program.html</loc>
-    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://df-kyun.github.io/categories/program.html</loc>
-    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://df-kyun.github.io/tags.html</loc>
-    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

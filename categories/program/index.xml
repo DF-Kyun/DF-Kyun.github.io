@@ -6,10 +6,28 @@
     <description>Recent content in program on DF-Kyun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://df-kyun.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>flowable任务监听器和java服务任务依赖注入问题</title>
+      <link>https://df-kyun.github.io/post/2020-08-23-program-flowable%E4%BB%BB%E5%8A%A1%E7%9B%91%E5%90%AC%E5%99%A8%E5%92%8Cjava%E6%9C%8D%E5%8A%A1%E4%BB%BB%E5%8A%A1%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98.html</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2020-08-23-program-flowable%E4%BB%BB%E5%8A%A1%E7%9B%91%E5%90%AC%E5%99%A8%E5%92%8Cjava%E6%9C%8D%E5%8A%A1%E4%BB%BB%E5%8A%A1%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E9%97%AE%E9%A2%98.html</guid>
+      <description>记录最近使用flowable任务监听器和java服务任务相关的一个问题 任务监听器 TaskListener 主要是监听usertask的情况，监听事件event有4种</description>
+    </item>
+    
+    <item>
+      <title>flowable工作流适配KingbaseES V8</title>
+      <link>https://df-kyun.github.io/post/2020-08-23-program-flowable%E5%B7%A5%E4%BD%9C%E6%B5%81%E9%80%82%E9%85%8Dkingbasees-v8.html</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2020-08-23-program-flowable%E5%B7%A5%E4%BD%9C%E6%B5%81%E9%80%82%E9%85%8Dkingbasees-v8.html</guid>
+      <description>目前，flowable支持mysql、postgreSQL、DB2、Oracle等数据库，官方暂不支持国产数据库KingbaseES。因项目</description>
+    </item>
     
     <item>
       <title>zeek脚本编写介绍</title>
