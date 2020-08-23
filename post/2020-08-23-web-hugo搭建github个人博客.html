@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh-cn">
 
-<head><title>web · DF-Kyun的博客</title><meta name="baidu-site-verification" content="jZRrwlvEpq" />
+<head><title> Hugo搭建GitHub个人博客 - DF-Kyun</title><meta name="baidu-site-verification" content="jZRrwlvEpq" />
 <meta name="google-site-verification" content="OcQLxKrUrj5A9hpAdCQuoY-K7f5Ja4LUYt35Kxdwq_E" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="DF-Kyun的博客" />
@@ -110,13 +110,16 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
                     
-                    <div class="archive-title tag">
-                        <h2 class="archive-name">标签： web</h2>
-                    </div>
+                    <h1>Hugo搭建GitHub个人博客</h1>
+
                     
                     <span class="meta">@DF-Kyun &nbsp;2020-08-23</span>
                     <div class="tags post-tags">
-                        
+                        <div class="post-tags">
+                            <a href="https://df-kyun.github.io/tags/web.html">web</a>
+                            <a href="https://df-kyun.github.io/tags/hugo.html">hugo</a>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,99 +130,49 @@
 
     
 
-<div class="container-fluid archive-page clearfix">
-    <div class="categorys-item">
-        
-        <article class="am-g blog-entry-article">
-    <div class="am-u-lg-6 am-u-lg-12 am-u-sm-12 blog-entry-text post-preview">
-        <div class="topic-header">
-            <div class="pull-left">
-                <div class="blog-flex-center">
-                    <div class="blog-flex0">
-                        <img src="/img/logo.png" alt="" class="link avatar avatar-image">
-                    </div>
-                    <div class="author-lockup blog-flex1">
-                        <a class="link" href="/post/2020-08-23-web-hugo%E6%90%AD%E5%BB%BAgithub%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">DF-Kyun</a>
-                        <span class="in">in</span>
-                        <span class="category-name">
-                               <a href="https://df-kyun.github.io/categories/web.html"> web </a>
-                                  
-                            </span>
-                    </div>
+<div class="container">
+    <div class="am-g am-g-fixed blog-fixed">
+        <div class="am-u-lg-12 am-u-sm-12">
+            <article class="am-article blog-article-p article-trigger">
+                <div id="post-content" class="am-article-bd">
+                    <h3 id="安装hugo">安装Hugo</h3>
+<p>在 Hugo Releases上下载最新版的Release程序。这里下载的是二进制程序，将下载下来的Hugo二进制程序重命名为hugo.exe，并将所在目录添加到Windows系统环境PATH变量中。
+安装并配置Hugo环境后，打开cmd命令行，可以直接使用hugo命令了，执行hugo version验证是否成功
+<img src="/assets/web/11.png" alt="验证安装"></p>
+<h3 id="创建博客">创建博客</h3>
+<p>使用如下命令新建一个名为“mysite”的网站：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo new site mysite
+</code></pre></div><p>mysite目录下会生成相应的目录信息</p>
+<h3 id="安装主题">安装主题</h3>
+<p>切换到mysite目录下，新建themes目录，切换到themes目录，下载主题，这里可以选用其余的主题</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone git@github.com:Heemooo/hugo-theme-amaze.git hugo-theme-amaze
+</code></pre></div><p>将主题下的exampleSite文件夹的内容复制到mysite的根目录下，注意修改config.toml中的相关信息</p>
+<h3 id="迁移数据">迁移数据</h3>
+<p>因为原有的博客是Jekyll生成，需要把数据迁移到新的博客环境，hugo提供的迁移数据的方式，新建一个空文件夹hugoOfPath</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo import jekyll /path/jekyllOfPath /target/hugoOfPath
+</code></pre></div><p>hugoOfPath目录下会生成迁移后的数据，将content目录下生成的md文件拷贝到新的博客目录下
+运行hugo（这里如果是新建的博客，可以在post下新建md文件）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo server
+</code></pre></div><p>访问http://localhost:1313/ ，可以访问博客</p>
+<h3 id="上传github">上传github</h3>
+<p>在GitHub上创建一个Repository，命名为：coderzh.github.io （coderzh替换为你的github用户名）。
+在站点根目录执行 Hugo 命令生成最终页面：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo
+</code></pre></div><p>所有静态页面都会生成到 public 目录，将pubilc目录里所有文件 push 到刚创建的Repository,访问：http://coderzh.github.io/ ，就可以访问到博客，之后更新博客再生成新的静态页面，然后push到github上，就可以更新了</p>
+
                 </div>
+            </article>
+             <div id="directory-content" class="directory-content">
+             <div id="directory"></div>
             </div>
-            <span class="pull-right time pc_time">2020-08-23</span>
+            <hr>
         </div>
-        <h1 class="post-index-title"><a target="_blank" itemtype="url" href="https://df-kyun.github.io/post/2020-08-23-web-hugo%E6%90%AD%E5%BB%BAgithub%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">Hugo搭建GitHub个人博客</a></h1>
-        <div class="post-content-preview">
-            安装Hugo 在 Hugo Releases上下载最新版的Release程序。这里下载的是二进制程序，将下载下来的Hugo二进制程序重命名为hugo.e
-        </div>
-        <div class="clearfix topic-footer">
-            <span class="pull-left time mobile_time">July 12,2019</span>
-        </div>
-    </div>
-</article>
-        
-        <article class="am-g blog-entry-article">
-    <div class="am-u-lg-6 am-u-lg-12 am-u-sm-12 blog-entry-text post-preview">
-        <div class="topic-header">
-            <div class="pull-left">
-                <div class="blog-flex-center">
-                    <div class="blog-flex0">
-                        <img src="/img/logo.png" alt="" class="link avatar avatar-image">
-                    </div>
-                    <div class="author-lockup blog-flex1">
-                        <a class="link" href="/post/2018-05-04-web-sonarjenkins%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5.html">DF-Kyun</a>
-                        <span class="in">in</span>
-                        <span class="category-name">
-                               <a href="https://df-kyun.github.io/categories/web.html"> web </a>
-                                  
-                            </span>
-                    </div>
-                </div>
-            </div>
-            <span class="pull-right time pc_time">2018-05-04</span>
-        </div>
-        <h1 class="post-index-title"><a target="_blank" itemtype="url" href="https://df-kyun.github.io/post/2018-05-04-web-sonarjenkins%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5.html">sonar、jenkins构建代码检查</a></h1>
-        <div class="post-content-preview">
-            sonar、jenkins构建代码检查 最近因为工作原因构建了一下代码检查流程，这里记录一下 安装sonar 预置条件 1）已安装JAVA环境 版本：
-        </div>
-        <div class="clearfix topic-footer">
-            <span class="pull-left time mobile_time">July 12,2019</span>
-        </div>
-    </div>
-</article>
-        
     </div>
 </div>
 
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-
-
-
-
 	
-	<footer class="blog-footer">
+	
+<footer class="blog-footer">
     <div class="blog-text-center">© 2019 <a href="/">DF-Kyun</a> 由 
         <a href="https://github.com/gohugoio/hugo" target="_blank">Hugo</a>
          强力驱动 Theme is 
@@ -247,6 +200,23 @@
         'height':"3"
     });
 </script>
+<script src="https://cdn.bootcss.com/headroom/0.9.4/headroom.min.js"></script>
+<script>
+       var postDirectoryBuild=function(){var b=function a(l,h){var k=[],e=typeof h==="object",g=typeof h==="string",j,f,d;for(f=0,d=l.length;f<d;f++){j=l[f];if((j.nodeType===1||j.nodeType===9)&&(!h||e&&h.test(j.tagName.toLowerCase())||g&&j.tagName.toLowerCase()===h)){k.push(j)}}return k},c=function(e,f,r){var n=[],m=[],h,p,d,j,l,s,o,g,k,q;h=(function(i,C,A){var w=b(i.childNodes,/^h\d$/),x=[],v=1,B=1,z=0,D=1,t="directory"+(Math.random()+"").replace(/\D/,""),B,y,u;while(w.length){u=w.shift();C.push(u.innerHTML);y=+u.tagName.match(/\d/)[0];if(y>v){x.push(1);B+=1}else{if(y===B||y>B&&y<=v){x.push(0);B=B}else{if(y<B){x.push(y-B);B=y}}}z+=x[x.length-1];v=y;u.id=u.id||(t+D++);A.push(u.id)}if(z!==0&&x[0]===1){x[0]=0}return x})(e,n,m);j=p=document.createElement("ul");q=document.createElement("span");q.style="color:#F38181;font-weight:600;";q.innerHTML="目录";p.appendChild(q);dirNum=[];for(g=0,k=h.length;g<k;g++){d=h[g];if(d===1){l=document.createElement("ul");if(!j.lastElementChild){j.appendChild(document.createElement("li"))}j.lastElementChild.appendChild(l);j=l;dirNum.push(0)}else{if(d<0){d*=2;while(d++){if(d%2){dirNum.pop()}j=j.parentNode}}}dirNum[dirNum.length-1]++;s=document.createElement("li");o=document.createElement("a");o.href="#"+m[g];o.innerHTML=!r?n[g]:dirNum.join(".")+" "+n[g];s.appendChild(o);j.appendChild(s)}f.appendChild(p)};c(document.getElementById("post-content"),document.getElementById("directory"),false)};postDirectoryBuild();
+</script>
+<script>
+    var postDirectory = new Headroom(document.getElementById("directory-content"), {
+        tolerance: 5,
+        offset: 240,
+        classes: {
+            initial: "initial",
+            pinned: "pinned",
+            unpinned: "unpinned"
+        }
+    });
+    postDirectory.init();
+</script>
+
 </body>
 
 </html>

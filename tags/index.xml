@@ -21,11 +21,29 @@
     </item>
     
     <item>
+      <title>hugo</title>
+      <link>https://df-kyun.github.io/tags/hugo.html</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/tags/hugo.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>program</title>
       <link>https://df-kyun.github.io/tags/program.html</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://df-kyun.github.io/tags/program.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://df-kyun.github.io/tags/web.html</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/tags/web.html</guid>
       <description></description>
     </item>
     
@@ -152,15 +170,6 @@
       <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://df-kyun.github.io/tags/sonar.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://df-kyun.github.io/tags/web.html</link>
-      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://df-kyun.github.io/tags/web.html</guid>
       <description></description>
     </item>
     

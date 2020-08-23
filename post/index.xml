@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Hugo搭建GitHub个人博客</title>
+      <link>https://df-kyun.github.io/post/2020-08-23-web-hugo%E6%90%AD%E5%BB%BAgithub%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2020-08-23-web-hugo%E6%90%AD%E5%BB%BAgithub%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</guid>
+      <description>安装Hugo 在 Hugo Releases上下载最新版的Release程序。这里下载的是二进制程序，将下载下来的Hugo二进制程序重命名为hugo.e</description>
+    </item>
+    
+    <item>
       <title>zeek脚本编写介绍</title>
       <link>https://df-kyun.github.io/post/2020-02-23-program-zeek%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99%E4%BB%8B%E7%BB%8D.html</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>

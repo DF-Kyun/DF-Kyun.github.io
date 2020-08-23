@@ -6,10 +6,19 @@
     <description>Recent content in web on DF-Kyun</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 04 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://df-kyun.github.io/categories/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo搭建GitHub个人博客</title>
+      <link>https://df-kyun.github.io/post/2020-08-23-web-hugo%E6%90%AD%E5%BB%BAgithub%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://df-kyun.github.io/post/2020-08-23-web-hugo%E6%90%AD%E5%BB%BAgithub%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html</guid>
+      <description>安装Hugo 在 Hugo Releases上下载最新版的Release程序。这里下载的是二进制程序，将下载下来的Hugo二进制程序重命名为hugo.e</description>
+    </item>
     
     <item>
       <title>sonar、jenkins构建代码检查</title>
