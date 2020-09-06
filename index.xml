@@ -12,24 +12,32 @@
     
     
     <item>
-      <title>关于</title>
+      <title>书单</title>
       <link>https://df-kyun.github.io/about.html</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
       <guid>https://df-kyun.github.io/about.html</guid>
       
-        <description>&lt;p&gt;Welcome to visit my blog!&lt;/p&gt;
-&lt;h4 id=&#34;1personal-info&#34;&gt;1.Personal Info&lt;/h4&gt;
-&lt;p&gt;Name: DF-Kyun&lt;br&gt;
-City: Jinan, China&lt;br&gt;
-Career: Software developer(Linux&amp;amp;Web)&lt;/p&gt;
-&lt;h4 id=&#34;2my-links&#34;&gt;2.My Links&lt;/h4&gt;
-&lt;p&gt;Blog: &lt;a href=&#34;https://df-kyun.github.io/&#34;&gt;https://df-kyun.github.io/&lt;/a&gt;&lt;br&gt;
-GitHub: &lt;a href=&#34;https://github.com/DF-Kyun&#34;&gt;https://github.com/DF-Kyun&lt;/a&gt;&lt;br&gt;
-简书：&lt;a href=&#34;https://www.jianshu.com/u/81274d271e6b&#34;&gt;https://www.jianshu.com/u/81274d271e6b&lt;/a&gt;&lt;br&gt;
-cnblogs：&lt;a href=&#34;https://www.cnblogs.com/DF-Kyun/&#34;&gt;https://www.cnblogs.com/DF-Kyun/&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;3contract&#34;&gt;3.Contract&lt;/h4&gt;
-&lt;p&gt;Email: &lt;a href=&#34;mailto:dfkyun@gmail.com&#34;&gt;dfkyun@gmail.com&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;strong&gt;2020-07月&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;    《程序员的数学（第二版）》（&lt;!-- raw HTML omitted --&gt;进行中&lt;!-- raw HTML omitted --&gt;）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2020-06月&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;    《从零开始学架构》 李运华（2020-06-27完成）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2020-02月&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;    《格局》 吴军（2020-02-14完成）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2019-01月&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;    《Spring Cloud 微服务架构开发实战》（2019-01-27完成）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2018-11月&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;    《态度》 吴军（2018-11-08完成）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2018-09月&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;    《MyBatis从入门到精通》（2018-09-20 完成）（&lt;!-- raw HTML omitted --&gt;面试之前系统突击一下，惭愧&lt;!-- raw HTML omitted --&gt;）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2018-08月&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;    《Spring实战(第4版)》（2018-08-24 完成）&lt;/p&gt;
+&lt;p&gt;    《Jenkins权威指南》（2018-08-02 完成）（&lt;!-- raw HTML omitted --&gt;版本比较老，粗略阅读&lt;!-- raw HTML omitted --&gt;）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2018-07月&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;    《SQL学习指南（第2版）》  （2018-07-30 完成）&lt;/p&gt;
+&lt;p&gt;    《极简主义》 [美] 乔舒亚·菲尔茨·米 （2018-7-15完成）（&lt;!-- raw HTML omitted --&gt;实际操作性不是很强，理论和故事比较多&lt;!-- raw HTML omitted --&gt;）&lt;/p&gt;
+&lt;p&gt;    《RabbitMQ实战指南》（2018-07-04完成）&lt;/p&gt;
+&lt;p&gt;    《内外兼修:程序员的成长之路》（2018-07-01完成）&lt;/p&gt;
 </description>
       
     </item>
